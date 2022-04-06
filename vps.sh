@@ -65,11 +65,11 @@ installGoTools() {
 	bannerInstall "Assetfinder"
 	go install github.com/tomnomnom/assetfinder@latest
 	bannerInstall "Subfinder"
-	GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+	GO111MODULE=on go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 	bannerInstall "Httprobe"
 	go install github.com/tomnomnom/httprobe@latest
 	bannerInstall "Httpx"
-	GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
+	GO111MODULE=on go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 	bannerInstall "Nuclei"
 	GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
 	nuclei -update-templates
@@ -80,7 +80,7 @@ installGoTools() {
 	bannerInstall "Ffuf"
 	go install github.com/ffuf/ffuf@latest
 	bannerInstall "Dalfox"
-	GO111MODULE=on go get -v github.com/hahwul/dalfox/v2
+	GO111MODULE=on go get -v github.com/hahwul/dalfox/v2@latest
 	bannerInstall "Anti-burl"
 	go install github.com/tomnomnom/hacks/anti-burl@latest
 	bannerInstall "Anew"
