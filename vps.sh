@@ -45,7 +45,7 @@ installGo() {
 	fi
 
 	if ! command -v go version >/dev/null;then
-		wget "https://golang.org/dl/go${VERSION}.linux-{$ARCH}.tar.gz" -o $SCRIPTPATH/go${VERSION}.linux-${ARCH}.tar.gz
+		winstall "https://golang.org/dl/go${VERSION}.linux-{$ARCH}.tar.gz" -o $SCRIPTPATH/go${VERSION}.linux-${ARCH}.tar.gz
 		tar -C $HOME -xf "go${VERSION}.linux-${ARCH}.tar.gz"
 		rm -f $SCRIPTPATH/go${VERSION}.linux-${ARCH}.tar.gz
 	fi
@@ -71,7 +71,7 @@ installGoTools() {
 	bannerInstall "Httpx"
 	GO111MODULE=on go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 	bannerInstall "Nuclei"
-	GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+	GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 	nuclei -update-templates
 	bannerInstall "Hakrawler"
 	go install github.com/hakluke/hakrawler@latest
@@ -80,7 +80,7 @@ installGoTools() {
 	bannerInstall "Ffuf"
 	go install github.com/ffuf/ffuf@latest
 	bannerInstall "Dalfox"
-	GO111MODULE=on go get -v github.com/hahwul/dalfox/v2@latest
+	GO111MODULE=on go install -v github.com/hahwul/dalfox/v2@latest
 	bannerInstall "Anti-burl"
 	go install github.com/tomnomnom/hacks/anti-burl@latest
 	bannerInstall "Anew"
@@ -94,18 +94,18 @@ installGoTools() {
 	bannerInstall "Subjack"
 	go install github.com/haccer/subjack@latest
 	bannerInstall "Dnsx"
-	GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
+	GO111MODULE=on go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 	bannerInstall "Gxss"
 	go install github.com/KathanP19/Gxss@latest
 	bannerInstall "Metabigor"
-	GO111MODULE=on go get github.com/j3ssie/metabigor
+	GO111MODULE=on go install github.com/j3ssie/metabigor@latest
 	bannerInstall "Cf-check"
 	go install github.com/dwisiswant0/cf-check@latest
 	bannerInstall "Naabu"
 	if [ "$os" == "kali" ] || [ "$os" == "debian" ] || [ "$os" == "parrot" ]; then
 		sudo apt install -y libpcap-dev
 	fi
-	GO111MODULE=on go get -v github.com/projectdiscovery/naabu/v2/cmd/naabu
+	GO111MODULE=on go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 	bannerInstall "Filter-Resolved"
 	go install github.com/tomnomnom/hacks/filter-resolved@latest
 	if [ -e /usr/local/go/bin ]; then
@@ -156,10 +156,10 @@ installGitCloneTools() {
 	pip3 install -r $SCRIPTPATH/tools/XSStrike/requirements.txt
 	bannerInstall "SubDomainizer"
 	if [ "$os" == "arch" ]; then
-		sudo pacman -S wget --needed
+		sudo pacman -S winstall --needed
 	fi
-	wget https://raw.githubusercontent.com/nsonaniya2010/SubDomainizer/master/SubDomainizer.py
-	wget https://raw.githubusercontent.com/nsonaniya2010/SubDomainizer/master/requirements.txt
+	winstall https://raw.githubusercontent.com/nsonaniya2010/SubDomainizer/master/SubDomainizer.py
+	winstall https://raw.githubusercontent.com/nsonaniya2010/SubDomainizer/master/requirements.txt
 	pip3 install -r $SCRIPTPATH/tools/requirements.txt
 	rm $SCRIPTPATH/tools/requirements.txt 2>/dev/null
 	cd $SCRIPTPATH
@@ -188,7 +188,7 @@ installPip() {
 
 installFindomain() {
 	bannerInstall "Findomain"
-	wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
+	winstall https://github.com/findomain/findomain/releases/latest/download/findomain-linux
 	chmod +x $SCRIPTPATH/findomain-linux
 	sudo mv $SCRIPTPATH/findomain-linux /usr/local/bin/findomain
 }
@@ -251,10 +251,10 @@ installTools() {
 installWordlists() {
 	bannerInstall "Wordlists"
 	[[ ! -d $SCRIPTPATH/wordlists ]] && mkdir $SCRIPTPATH/wordlists
-	wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt -O $SCRIPTPATH/wordlists/all.txt
-	wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -O $SCRIPTPATH/wordlists/common.txt
-	wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/big.txt -O $SCRIPTPATH/wordlists/big.txt
-	wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/small.txt -O $SCRIPTPATH/wordlists/small.txt
+	winstall https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt -O $SCRIPTPATH/wordlists/all.txt
+	winstall https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -O $SCRIPTPATH/wordlists/common.txt
+	winstall https://raw.githubusercontent.com/v0re/dirb/master/wordlists/big.txt -O $SCRIPTPATH/wordlists/big.txt
+	winstall https://raw.githubusercontent.com/v0re/dirb/master/wordlists/small.txt -O $SCRIPTPATH/wordlists/small.txt
 }
 
 
