@@ -89,6 +89,14 @@ DNS_RESOLVER () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"PureDNS installation in progress ...";
 	GO111MODULE=on go install github.com/d3mondev/puredns/v2@latest > /dev/null 2>&1 && ln -s ~/go/bin/puredns /usr/local/bin;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"PureDNS installation is done !"; echo "";
+	#shuffledns
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"SHuffleDNS installation in progress ...";
+	go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest > /dev/null 2>&1 && ln -s ~/go/bin/shuffledns /usr/local/bin;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
+	#dnsvalidator
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"DNSvalidator installation in progress ...";
+	cd $TOOLS_DIRECTORY && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s $TOOLS_DIRECTORY/dnsvalidator/bin/dnsvalidator /usr/local/bin/;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"DNSvalidator installation is done !"; echo "";
 }
 
 VISUAL_RECON () {
