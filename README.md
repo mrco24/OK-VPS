@@ -14,10 +14,6 @@ Automatically install some web hacking/bug bounty tools for your VPS.
 
 
 
-[![asciicast](https://asciinema.org/a/ZjvDJJ6ZJsQvk4tuUbplaTf8a.svg)](https://asciinema.org/a/ZjvDJJ6ZJsQvk4tuUbplaTf8a)
-
-
-
 ## Installation 
 
 ```
@@ -41,7 +37,9 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [dnsx](https://github.com/projectdiscovery/dnsx)
 - [MassDNS](https://github.com/blechschmidt/massdns)
 - [PureDNS](https://github.com/d3mondev/puredns)
-
+- [SHuffledns](https://github.com/projectdiscovery/shuffledns)
+- [DNSvalidator](https://github.com/vortexau/dnsvalidator)
+  
 ### Visual recon
 
 - [Aquatone](https://github.com/michenriksen/aquatone)
