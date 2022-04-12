@@ -2,17 +2,6 @@
 
 Automatically install some web hacking/bug bounty tools for your VPS.
 
-<b>O.S supported :heavy_check_mark: </b>
-
-- Debian 10/11 x64 
-
-- Kali Linux 2021.4 x64
-
-- Linux Mint 20.2 x64
-
-- Ubuntu20.04 x64 
-
-
 
 ## Installation 
 
@@ -31,6 +20,7 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [Findomain](https://github.com/Findomain/Findomain)
 - [Github-subdomains](https://github.com/gwen001/github-subdomains)
 - [Subfinder](https://github.com/projectdiscovery/subfinder)
+- [Sudomy](https://github.com/screetsec/Sudomy)
 
 ### DNS resolver
 
