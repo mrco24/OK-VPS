@@ -238,7 +238,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"XSStrike installation is done !"; echo "";
 	#kxss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
-	go install -u github.com/tomnomnom/hacks/kxss@latest > /dev/null 2>&1 && ln -s ~/go/bin/kxss /usr/local/bin/;
+	go install github.com/tomnomnom/hacks/kxss@latest > /dev/null 2>&1 && ln -s ~/go/bin/kxss /usr/local/bin/;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"kxss installation is done !"; echo "";
 	#Gxss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
