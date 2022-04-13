@@ -79,7 +79,6 @@ SUBDOMAINS_ENUMERATION () {
 	cd $TOOLS_DIRECTORY git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat > /dev/null 2>&1 && ln -s $TOOLS_DIRECTORY/Sudomy/bin/sudomy /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Sudomy installation is done !"; echo "";
 }
-}
 
 DNS_RESOLVER () {
 	#MassDNS
