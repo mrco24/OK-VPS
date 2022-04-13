@@ -1,4 +1,4 @@
-# VPS-web-hacking-tools
+# install-alltools
 
 Automatically install some web hacking/bug bounty tools for your VPS.
 
@@ -44,7 +44,7 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 
 - [Gospider](https://github.com/jaeles-project/gospider)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
-
+- [ParamSpider](https://github.com/devanshbatham/ParamSpider)
 ### Network scanner
 
 - [Masscan](https://github.com/robertdavidgraham/masscan)
@@ -89,6 +89,7 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [Dalfox](https://github.com/hahwul/dalfox)
 - [kxss](https://github.com/tomnomnom/hacks/tree/master/kxss)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
+- [Gxss] (https://github.com/KathanP19/Gxss)
 
 ### Vulns - SQL Injection
 
@@ -112,6 +113,7 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [SecretFinder](https://github.com/m4ll0k/SecretFinder)
 - [subjs](https://github.com/lc/subjs)
+- [GetJS](https://github.com/003random/getJS)
 
 ### Git hunting
 
