@@ -99,7 +99,7 @@ DNS_RESOLVER () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 	#dnsvalidator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"DNSvalidator installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s /root/install-tools/tools/dnsvalidator/bin/dnsvalidator /usr/local/bin/;
+	cd /root/install-tools/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s /root/install-tools/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"DNSvalidator installation is done !"; echo "";
 }
 
