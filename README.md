@@ -45,6 +45,9 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [Gospider](https://github.com/jaeles-project/gospider)
 - [Hakrawler](https://github.com/hakluke/hakrawler)
 - [ParamSpider](https://github.com/devanshbatham/ParamSpider)
+- [gau](https://github.com/lc/gau)
+- [waybackurls](https://github.com/tomnomnom/waybackurls)
+- [paramspider](https://github.com/devanshbatham/ParamSpider)
 ### Network scanner
 
 - [Masscan](https://github.com/robertdavidgraham/masscan)
@@ -89,7 +92,7 @@ cd /tmp && git clone https://github.com/supr4s/VPS-web-hacking-tools && cd VPS-w
 - [Dalfox](https://github.com/hahwul/dalfox)
 - [kxss](https://github.com/tomnomnom/hacks/tree/master/kxss)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
-- [Gxss] (https://github.com/KathanP19/Gxss)
+- [Gxss](https://github.com/KathanP19/Gxss)
 
 ### Vulns - SQL Injection
 
