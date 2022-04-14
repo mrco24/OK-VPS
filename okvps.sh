@@ -76,7 +76,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Crobat installation is done !"; echo "";
 	#Sudomy
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Sudomy installation in progress ...";
-	cd /root/install-tools/tools git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat > /dev/null 2>&1 && ln -s /root/install-tools/tools/Sudomy/bin/sudomy /usr/local/bin/;
+	cd /root/install-tools/tools && git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install npm && apt-get install jq && npm install -g phantomjs && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat > /dev/null 2>&1 && ln -s /root/install-tools/tools/Sudomy/bin/sudomy /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Sudomy installation is done !"; echo "";
 }
 
