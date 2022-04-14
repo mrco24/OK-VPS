@@ -1,4 +1,4 @@
-# install-alltools
+# install-all-tools
 
 Automatically install some web hacking/bug bounty tools for your VPS.
 
