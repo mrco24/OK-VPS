@@ -110,7 +110,7 @@ VISUAL_/root/install-tools/tools () {
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${GREEN}"Aquatone installation is done !"; echo "";
 	#Gowitness
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${RED}"Gowitness installation in progress ...";
-	cd /tmp && wget install https://github.com/sensepost/gowitness/releases/download/$GOWITNESSVER/gowitness-$GOWITNESSVER-linux-amd64 > /dev/null 2>&1 && mv gowitness-$GOWITNESSVER-linux-amd64 /usr/local/bin/gowitness && chmod +x /usr/local/bin/gowitness;
+	go install github.com/sensepost/gowitness@latest > /dev/null 2>&1 && ln -s ~/go/bin/gowitness chmod +x /usr/local/bin/;
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${GREEN}"Gowitness installation is done !"; echo "";
 }
 
