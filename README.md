@@ -93,6 +93,7 @@ cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./
 - [kxss](https://github.com/tomnomnom/hacks/tree/master/kxss)
 - [XSStrike](https://github.com/s0md3v/XSStrike)
 - [Gxss](https://github.com/KathanP19/Gxss)
+- [FinDOM-XSS](https://github.com/dwisiswant0/findom-xss)
 
 ### Vulns - SQL Injection
 
@@ -117,6 +118,10 @@ cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./
 - [SecretFinder](https://github.com/m4ll0k/SecretFinder)
 - [subjs](https://github.com/lc/subjs)
 - [GetJS](https://github.com/003random/getJS)
+- 
+## Find_Web_Technologies
+
+- [Wappalyzer CLI](https://github.com/gokulapap/wappalyzer-cli)
 
 ### Git hunting
 
