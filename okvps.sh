@@ -17,7 +17,6 @@ ENVIRONMENT () {
 		#Specific Debian
 		#chromium
 		apt-install update -y > /dev/null 2>&1;
-		apt-install install chromium python python3 python3-pip unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev ruby libgmp-dev zlib1g-dev -y > /dev/null 2>&1;
 		cd /tmp && curl https://bootstrap.pypa.io/pip/2.7/install-pip.py --output install-pip.py > /dev/null 2>&1 && python2 install-pip.py > /dev/null 2>&1;
 	elif [ "$OS" == "Ubuntu" ]; then
 		#Specific Ubuntu
