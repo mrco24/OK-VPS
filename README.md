@@ -30,7 +30,7 @@ cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./
 - [ShuffleDNS](https://github.com/projectdiscovery/shuffledns)
 - [DNSvalidator](https://github.com/vortexau/dnsvalidator)
   
-### Visual recon
+### Screenshot
 
 - [Aquatone](https://github.com/michenriksen/aquatone)
 - [Gowitness](https://github.com/sensepost/gowitness)
@@ -48,6 +48,7 @@ cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./
 - [gau](https://github.com/lc/gau)
 - [waybackurls](https://github.com/tomnomnom/waybackurls)
 - [paramspider](https://github.com/devanshbatham/ParamSpider)
+
 ### Network scanner
 
 - [Masscan](https://github.com/robertdavidgraham/masscan)
