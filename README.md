@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
- #<a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
+ <a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
 <br>
  OK-VPS
 <br>
@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/static/v1?label=Update&message=V1.0&color=green">
   </a>
   <a href="https://twitter.com/mrco24">
-      <img src="https://img.shields.io/twitter/url?label=Follow&style=social&url=https%3A%2F%2Ftwitter.com%2Fmrco24">
+      <img src="https://img.shields.io/twitter/follow/mrco24?style=social">
   </a>
 </p>
 
