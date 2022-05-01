@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/static/v1?label=Update&message=V2.0&color=green">
   </a>
   <a href="https://twitter.com/mrco24">
-      <img src="https://img.shields.io/twitter/follow/mrco24=social">
+      <img src="https://img.shields.io/twitter/url?label=Follow&style=social&url=https%3A%2F%2Ftwitter.com%2Fmrco24">
   </a>
 </p>
 
