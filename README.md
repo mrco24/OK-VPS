@@ -1,5 +1,5 @@
   <br>
-  <a href="https://github.com/mrco24/install-tools"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
+  <a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
   <br>
    OK-VPS
   <br>
