@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #Creating tools directory if not exist
-source ./.env && mkdir -p /root/install-tools/tools $TOOLS_DIRECTORY;
+source ./.env && mkdir -p /root/install-tools/tools /root/install-tools/tools/file ;
 clear;
 
 ENVIRONMENT () {
@@ -18,19 +18,19 @@ ENVIRONMENT () {
 		#chromium
 		apt-get update -y > /dev/null 2>&1;
 		apt-get install chromium python python3 python3-pip unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev ruby libgmp-dev zlib1g-dev -y > /dev/null 2>&1;
-		cd /tmp && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
+		cd /root/install-tools/tools/file && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
 	elif [ "$OS" == "Ubuntu" ]; then
 		#Specific Ubuntu
 		#Specificity : chromium-browser replace chromium
         apt-get update -y > /dev/null 2>&1
         apt-get install chromium-browser python python3 python3-pip unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev ruby libgmp-dev zlib1g-dev -y > /dev/null 2>&1;
-        cd /tmp && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
+        cd /root/install-tools/tools/file && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
 	elif [ "$OS" == "Kali" ]; then
 		#Specific Kali Linux
 		#Specificity : no package name with "python"
         apt-get update -y > /dev/null 2>&1;
         apt-get install chromium python3 python3-pip unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev ruby libgmp-dev zlib1g-dev -y > /dev/null 2>&1;
-        cd /tmp && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
+        cd /root/install-tools/tools/file && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
         pip install -U setuptools > /dev/null 2>&1;
         #Needed for NoSQLMap
         pip install couchdb pbkdf2 pymongo ipcalc > /dev/null 2>&1;    
@@ -47,7 +47,7 @@ unset OS
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Packages required installation is done !"; echo "";
 	#Generic fot both OS - Golang environment
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Golang environment installation in progress ...";
-	cd /tmp && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && tar xvf go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
+	cd /root/install-tools/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && tar xvf go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Golang environment installation is done !"; echo "";
 }
 
@@ -70,7 +70,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Github-subdomains installation is done !"; echo "";
 	#Amass
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
-	cd /tmp && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip > /dev/null 2>&1 && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
+	cd /root/install-tools/tools/file && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip > /dev/null 2>&1 && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
 	#Crobat
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Crobat installation in progress ...";
@@ -108,7 +108,7 @@ DNS_RESOLVER () {
 VISUAL_/root/install-tools/tools () {
 	#Aquatone
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${RED}"Aquatone installation in progress ...";
-	cd /tmp && wget install https://github.com/michenriksen/aquatone/releases/download/v$AQUATONEVER/aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && unzip aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && mv aquatone /usr/local/bin/;
+	cd /root/install-tools/tools/file && wget install https://github.com/michenriksen/aquatone/releases/download/v$AQUATONEVER/aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && unzip aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && mv aquatone /usr/local/bin/;
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${GREEN}"Aquatone installation is done !"; echo "";
 	#Gowitness
 	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${RED}"Gowitness installation in progress ...";
@@ -172,7 +172,7 @@ HTTP_PARAMETER () {
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
-	cd /tmp && wget install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
+	cd /root/install-tools/tools/file && wget install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"x8 installation is done !"; echo "";
 }
 
@@ -223,7 +223,7 @@ SSTI_TOOLS () {
 API_TOOLS () {
 	#Kiterunner
 	echo -e ${BLUE}"[API TOOLS]" ${RED}"Kiterunner installation in progress ...";
-	cd /tmp && wget install https://github.com/assetnote/kiterunner/releases/download/v"$KITERUNNERVER"/kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && tar xvf kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && mv kr /usr/local/bin;
+	cd /root/install-tools/tools/file && wget install https://github.com/assetnote/kiterunner/releases/download/v"$KITERUNNERVER"/kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && tar xvf kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && mv kr /usr/local/bin;
 	cd /root/install-tools/tools && mkdir -p kiterunner-wordlists && cd kiterunner-wordlists && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-large.kite.tar.gz > /dev/null 2>&1 && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-small.kite.tar.gz > /dev/null 2>&1 && for f in *.tar.gz; do tar xf "$f"; rm -Rf "$f"; done
 	echo -e ${BLUE}"[API TOOLS]" ${GREEN}"Kiterunner installation is done !"; echo "";
 }
