@@ -47,6 +47,8 @@ cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./
 - [gau](https://github.com/lc/gau)
 - [waybackurls](https://github.com/tomnomnom/waybackurls)
 - [paramspider](https://github.com/devanshbatham/ParamSpider)
+- [GF](https://github.com/tomnomnom/gf)
+- [GF_Pattern](https://github.com/1ndianl33t/Gf-Patterns)
 
 ### Network scanner
 
