@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 #Creating tools directory if not exist
-mkdir -p /root/install-tools/tools /root/install-tools/tools/file ;
+mkdir -p /root/Okvps/tools /root/Okvps/tools/file;
 clear;
 
 ENVIRONMENT () {
@@ -37,7 +37,7 @@ ENVIRONMENT () {
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Packages required installation is done !"; echo "";
 	#Generic fot both OS - Golang environment
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Golang environment installation in progress ...";
-	cd /root/install-tools/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && tar xvf go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
+	cd /root/Okvps/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && tar xvf go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Golang environment installation is done !"; echo "";
 }
 
@@ -52,15 +52,15 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Assetfinder installation is done !"; echo "";
 	#Findomain
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";
-	cd /tmp && wget install https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux > /dev/null 2>&1 && chmod +x findomain-linux && mv ./findomain-linux /usr/local/bin/findomain;
+	cd /root/Okvps/tools/file && wget install https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux > /dev/null 2>&1 && chmod +x findomain-linux && mv ./findomain-linux /usr/local/bin/findomain;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Findomain installation is done !"; echo "";
 	#Github-subdomains
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Github-subdomains installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/gwen001/github-search.git > /dev/null 2>&1 && pip install colored && pip install tldextract;
+	cd /root/Okvps/tools && git clone https://github.com/gwen001/github-search.git > /dev/null 2>&1 && pip install colored && pip install tldextract;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Github-subdomains installation is done !"; echo "";
 	#Amass
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
-	cd /root/install-tools/tools/file && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip > /dev/null 2>&1 && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
+	cd /root/Okvps/tools/file && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip > /dev/null 2>&1 && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
 	#Crobat
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Crobat installation in progress ...";
@@ -68,14 +68,14 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Crobat installation is done !"; echo "";
 	#Sudomy
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Sudomy installation in progress ...";
-	cd /root/install-tools/tools && git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install npm && apt-get install jq && npm install -g phantomjs && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat > /dev/null 2>&1 && ln -s /root/install-tools/tools/Sudomy/bin/sudomy /usr/local/bin/;
+	cd /root/Okvps/tools && git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install npm && apt-get install jq && npm install -g phantomjs && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat > /dev/null 2>&1 && ln -s /root/Okvps/tools/Sudomy/bin/sudomy /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Sudomy installation is done !"; echo "";
 }
 
 DNS_RESOLVER () {
 	#MassDNS
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"MassDNS installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/blechschmidt/massdns.git > /dev/null 2>&1 && cd massdns && make > /dev/null 2>&1 && ln -s /root/install-tools/tools/massdns/bin/massdns /usr/local/bin/;
+	cd /root/Okvps/tools && git clone https://github.com/blechschmidt/massdns.git > /dev/null 2>&1 && cd massdns && make > /dev/null 2>&1 && ln -s /root/Okvps/tools/massdns/bin/massdns /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"MassDNS installation is done !"; echo "";
 	#dnsx
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"dnsx installation in progress ...";
@@ -91,19 +91,19 @@ DNS_RESOLVER () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 	#dnsvalidator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"DNSvalidator installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s /root/install-tools/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
+	cd /root/Okvps/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s /root/Okvps/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"DNSvalidator installation is done !"; echo "";
 }
 
-VISUAL_/root/install-tools/tools () {
+VISUAL_/root/Okvps/tools () {
 	#Aquatone
-	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${RED}"Aquatone installation in progress ...";
-	cd /root/install-tools/tools/file && wget install https://github.com/michenriksen/aquatone/releases/download/v$AQUATONEVER/aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && unzip aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && mv aquatone /usr/local/bin/;
-	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${GREEN}"Aquatone installation is done !"; echo "";
+	echo -e ${BLUE}"[VISUAL /root/Okvps/tools]" ${RED}"Aquatone installation in progress ...";
+	cd /root/Okvps/tools/file && wget install https://github.com/michenriksen/aquatone/releases/download/v$AQUATONEVER/aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && unzip aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && mv aquatone /usr/local/bin/;
+	echo -e ${BLUE}"[VISUAL /root/Okvps/tools]" ${GREEN}"Aquatone installation is done !"; echo "";
 	#Gowitness
-	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${RED}"Gowitness installation in progress ...";
+	echo -e ${BLUE}"[VISUAL /root/Okvps/tools]" ${RED}"Gowitness installation in progress ...";
 	go install github.com/sensepost/gowitness@latest > /dev/null 2>&1 && ln -s ~/go/bin/gowitness chmod +x /usr/local/bin/;
-	echo -e ${BLUE}"[VISUAL /root/install-tools/tools]" ${GREEN}"Gowitness installation is done !"; echo "";
+	echo -e ${BLUE}"[VISUAL /root/Okvps/tools]" ${GREEN}"Gowitness installation is done !"; echo "";
 }
 
 HTTP_PROBE () {
@@ -128,7 +128,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Hakrawler installation is done !"; echo "";
 	#ParamSpider
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"ParamSpider installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/devanshbatham/ParamSpider > /dev/null 2>&1 && cd ParamSpider && pip3 install -r requirements.txt 
+	cd /root/Okvps/tools && git clone https://github.com/devanshbatham/ParamSpider > /dev/null 2>&1 && cd ParamSpider && pip3 install -r requirements.txt 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"ParamSpider installation is done !"; echo "";
 	#Waybackurls
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Waybackurls installation in progress ...";
@@ -144,7 +144,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF installation in progress ...";
 	#GF_P
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
-	cd /root && mkdir .gf &&  cd /root/install-tools/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/install-tools/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/install-tools/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/install-tools/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
+	cd /root && mkdir .gf &&  cd /root/Okvps/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/Okvps/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/Okvps/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/Okvps/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
 }
 
@@ -155,7 +155,7 @@ NETWORK_SCANNER () {
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Nmap installation is done !"; echo "";
 	#masscan
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Masscan installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/robertdavidgraham/masscan > /dev/null 2>&1 && cd masscan && make > /dev/null 2>&1 && make install > /dev/null 2>&1 && mv bin/masscan /usr/local/bin/;
+	cd /root/Okvps/tools && git clone https://github.com/robertdavidgraham/masscan > /dev/null 2>&1 && cd masscan && make > /dev/null 2>&1 && make install > /dev/null 2>&1 && mv bin/masscan /usr/local/bin/;
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Masscan installation is done !"; echo "";
 	#naabu
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Naabu installation in progress ...";
@@ -170,7 +170,7 @@ HTTP_PARAMETER () {
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
-	cd /root/install-tools/tools/file && wget install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
+	cd /root/Okvps/tools/file && wget install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"x8 installation is done !"; echo "";
 }
 
@@ -192,18 +192,18 @@ FUZZING_TOOLS () {
 LFI_TOOLS () {
 	#LFISuite
 	echo -e ${BLUE}"[LFI TOOLS]" ${RED}"LFISuite installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/D35m0nd142/LFISuite.git > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/D35m0nd142/LFISuite.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[LFI TOOLS]" ${GREEN}"LFISuite installation is done !"; echo "";
 }
 
 SSRF_TOOLS () {
 	#SSRFmap
 	echo -e ${BLUE}"[SSRF TOOLS]" ${RED}"SSRFmap installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/swisskyrepo/SSRFmap > /dev/null 2>&1 && cd SSRFmap && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/swisskyrepo/SSRFmap > /dev/null 2>&1 && cd SSRFmap && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[SSRF TOOLS]" ${GREEN}"SSRFmap installation is done !"; echo "";
 	#Gopherus
 	echo -e ${BLUE}"[SSRF TOOLS]" ${RED}"Gopherus installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/tarunkant/Gopherus.git > /dev/null 2>&1 && cd Gopherus && chmod +x install.sh && ./install.sh > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/tarunkant/Gopherus.git > /dev/null 2>&1 && cd Gopherus && chmod +x install.sh && ./install.sh > /dev/null 2>&1;
 	echo -e ${BLUE}"[SSRF TOOLS]" ${GREEN}"Gopherus installation is done !"; echo "";
 	#Interactsh
 	echo -e ${BLUE}"[SSRF TOOLS]" ${RED}"Interactsh installation in progress ...";
@@ -214,15 +214,15 @@ SSRF_TOOLS () {
 SSTI_TOOLS () {
 	#tplmap
 	echo -e ${BLUE}"[SSTI TOOLS]" ${RED}"tplmap installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/epinna/tplmap.git > /dev/null 2>&1 && cd tplmap && pip install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/epinna/tplmap.git > /dev/null 2>&1 && cd tplmap && pip install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[SSTI TOOLS]" ${GREEN}"tplmap installation is done !"; echo "";
 }
 
 API_TOOLS () {
 	#Kiterunner
 	echo -e ${BLUE}"[API TOOLS]" ${RED}"Kiterunner installation in progress ...";
-	cd /root/install-tools/tools/file && wget install https://github.com/assetnote/kiterunner/releases/download/v"$KITERUNNERVER"/kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && tar xvf kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && mv kr /usr/local/bin;
-	cd /root/install-tools/tools && mkdir -p kiterunner-wordlists && cd kiterunner-wordlists && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-large.kite.tar.gz > /dev/null 2>&1 && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-small.kite.tar.gz > /dev/null 2>&1 && for f in *.tar.gz; do tar xf "$f"; rm -Rf "$f"; done
+	cd /root/Okvps/tools/file && wget install https://github.com/assetnote/kiterunner/releases/download/v"$KITERUNNERVER"/kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && tar xvf kiterunner_"$KITERUNNERVER"_linux_amd64.tar.gz > /dev/null 2>&1 && mv kr /usr/local/bin;
+	cd /root/Okvps/tools && mkdir -p kiterunner-wordlists && cd kiterunner-wordlists && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-large.kite.tar.gz > /dev/null 2>&1 && wget install https://wordlists-cdn.assetnote.io/data/kiterunner/routes-small.kite.tar.gz > /dev/null 2>&1 && for f in *.tar.gz; do tar xf "$f"; rm -Rf "$f"; done
 	echo -e ${BLUE}"[API TOOLS]" ${GREEN}"Kiterunner installation is done !"; echo "";
 }
 
@@ -230,7 +230,7 @@ API_TOOLS () {
 WORDLISTS () {
 	#SecLists
 	echo -e ${BLUE}"[WORDLISTS]" ${RED}"SecLists installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/danielmiessler/SecLists.git > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/danielmiessler/SecLists.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[WORDLISTS]" ${GREEN}"SecLists installation is done !"; echo "";
 }
 
@@ -241,7 +241,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Dalfox installation is done !"; echo "";
 	#XSStrike
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"XSStrike installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/s0md3v/XSStrike > /dev/null 2>&1 && cd XSStrike && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/s0md3v/XSStrike > /dev/null 2>&1 && cd XSStrike && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"XSStrike installation is done !"; echo "";
 	#kxss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
@@ -253,7 +253,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Gxss installation is done !"; echo "";
 	#Findom-xss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"findom-xss installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/dwisiswant0/findom-xss.git > /dev/null 2>&1 && cd findom-xss && chmod +x findom-xss.sh > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/dwisiswant0/findom-xss.git > /dev/null 2>&1 && cd findom-xss && chmod +x findom-xss.sh > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"findom-xss installation is done !"; echo "";
 }
 
@@ -264,7 +264,7 @@ VULNS_SQLI () {
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"SQLMap installation is done !"; echo "";
 	#NoSQLMap
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${RED}"NoSQLMap installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/codingo/NoSQLMap.git > /dev/null 2>&1 && cd NoSQLMap && python setup.py install > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/codingo/NoSQLMap.git > /dev/null 2>&1 && cd NoSQLMap && python setup.py install > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"NoSQLMap installation is done !"; echo "";
 }
 
@@ -279,7 +279,7 @@ CMS_SCANNER () {
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"Droopescan installation is done !"; echo "";
 	#AEM-Hacking
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"AEM-Hacking installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/0ang3el/aem-hacker.git > /dev/null 2>&1 && cd aem-hacker && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/0ang3el/aem-hacker.git > /dev/null 2>&1 && cd aem-hacker && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"AEM-Hacking installation is done !"; echo "";
 }
 
@@ -292,7 +292,7 @@ VULNS_SCANNER () {
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
 	GO111MODULE=on go install github.com/jaeles-project/jaeles  > /dev/null 2>&1 && ln -s ~/go/bin/jaeles /usr/local/bin/;
-	cd /root/install-tools/tools && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
 	#Nikto
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
@@ -303,11 +303,11 @@ VULNS_SCANNER () {
 JS_HUNTING () {
 	#Linkfinder
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"Linkfinder installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/GerbenJavado/LinkFinder.git > /dev/null 2>&1 && cd LinkFinder && pip3 install -r requirements.txt > /dev/null 2>&1 && python3 setup.py install > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/GerbenJavado/LinkFinder.git > /dev/null 2>&1 && cd LinkFinder && pip3 install -r requirements.txt > /dev/null 2>&1 && python3 setup.py install > /dev/null 2>&1;
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"Linkfinder installation is done !"; echo "";
 	#SecretFinder
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"SecretFinder installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/m4ll0k/SecretFinder.git > /dev/null 2>&1 && cd SecretFinder && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/m4ll0k/SecretFinder.git > /dev/null 2>&1 && cd SecretFinder && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"SecretFinder installation is done !"; echo "";
 	#subjs
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"subjs installation in progress ...";
@@ -322,11 +322,11 @@ JS_HUNTING () {
 GIT_HUNTING() {
 	#GitDorker
 	echo -e ${BLUE}"[GIT HUNTING]" ${RED}"gitGraber installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/obheda12/GitDorker.git > /dev/null 2>&1 && cd GitDorker && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/obheda12/GitDorker.git > /dev/null 2>&1 && cd GitDorker && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[GIT HUNTING]" ${GREEN}"gitGraber installation is done !"; echo "";
 	#gitGraber
 	echo -e ${BLUE}"[GIT HUNTING]" ${RED}"gitGraber installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/hisxo/gitGraber.git > /dev/null 2>&1 && cd gitGraber && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/hisxo/gitGraber.git > /dev/null 2>&1 && cd gitGraber && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[GIT HUNTING]" ${GREEN}"gitGraber installation is done !"; echo "";
 	#GitHacker
 	echo -e ${BLUE}"[GIT HUNTING]" ${RED}"GitHacker installation in progress ...";
@@ -334,7 +334,7 @@ GIT_HUNTING() {
 	echo -e ${BLUE}"[GIT HUNTING]" ${GREEN}"GitHacker installation is done !"; echo "";
 	#GitTools
 	echo -e ${BLUE}"[GIT HUNTING]" ${RED}"GitToolsinstallation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/internetwache/GitTools.git > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/internetwache/GitTools.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[GIT HUNTING]" ${GREEN}"GitTools installation is done !"; echo "";
 }
 
@@ -342,11 +342,11 @@ GIT_HUNTING() {
 SENSITIVE_FINDING() {
 	#DumpsterDiver
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"gitGraber installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/securing/DumpsterDiver.git > /dev/null 2>&1 && cd DumpsterDiver && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/securing/DumpsterDiver.git > /dev/null 2>&1 && cd DumpsterDiver && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"gitGraber installation is done !"; echo "";
 	#EarlyBird
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"EarlyBird installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/americanexpress/earlybird.git > /dev/null 2>&1 && cd earlybird && ./build.sh > /dev/null 2>&1 && ./install.sh > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/americanexpress/earlybird.git > /dev/null 2>&1 && cd earlybird && ./build.sh > /dev/null 2>&1 && ./install.sh > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"EarlyBird installation is done !"; echo "";
 	#Ripgrep
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Ripgrep installation in progress ...";
@@ -356,7 +356,7 @@ SENSITIVE_FINDING() {
 
 Find_Web_Technologies(){
 #wappalyzer-cli
-cd /root/install-tools/tools && git clone https://github.com/gokulapap/wappalyzer-cli  > /dev/null 2>&1 && cd wappalyzer-cli && pip3 install . > /dev/null 2>&1;
+cd /root/Okvps/tools && git clone https://github.com/gokulapap/wappalyzer-cli  > /dev/null 2>&1 && cd wappalyzer-cli && pip3 install . > /dev/null 2>&1;
 }
 USEFUL_TOOLS () {
 	#installallurls
@@ -385,7 +385,7 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"qsreplace installation is done !"; echo "";
 	#Interlace
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Interlace installation in progress ...";
-	cd /root/install-tools/tools && git clone https://github.com/codingo/Interlace.git > /dev/null 2>&1 && cd Interlace && python3 setup.py install > /dev/null 2>&1;
+	cd /root/Okvps/tools && git clone https://github.com/codingo/Interlace.git > /dev/null 2>&1 && cd Interlace && python3 setup.py install > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Interlace installation is done !"; echo "";
 	#Jq
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"jq installation in progress ...";
@@ -401,4 +401,4 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
 }
 
-ENVIRONMENT && SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_/root/install-tools/tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
+ENVIRONMENT && SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_/root/Okvps/tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
