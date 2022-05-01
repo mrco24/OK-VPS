@@ -5,6 +5,19 @@
   <br>
 </h1>
 
+<h4 align="center">Bug Bounty Vps Setup Tools Installer</h4>
+    <p align="center">
+  <a href="https://github.com/mrco24/OK-VPS">
+    <img src="https://img.shields.io/github/issues/mrco24/OK-VPS>
+  </a>
+    <a href="https://github.com/joyghoshs/0install">
+    <img src="https://img.shields.io/static/v1?label=Update&message=V2.0&color=green">
+  </a>
+  <a href="https://twitter.com/0xjoyghosh">
+      <img src="https://img.shields.io/twitter/follow/0xjoyghosh?style=social">
+  </a>
+</p>
+
 # install-all-tools
 
 With these tools you can install most of the bug bounty tools with just one command and The tool has been modified and spelled many tools ## special thanks @supr4s Because most of these tools modify his tools
