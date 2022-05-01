@@ -22,6 +22,11 @@ ENVIRONMENT () {
         python get-install pip.py > /dev/null 2>&1;
         python install-requests > /dev/null 2>&1;
         apt-get update --fix-missing > /dev/null 2>&1;
+	#Specific Kali Linux
+		#Specificity : no package name with "python"
+        apt-get update -y > /dev/null 2>&1;
+        apt-get install chromium python3 python3-pip unzip make gcc libpcap-dev curl build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev ruby libgmp-dev zlib1g-dev -y > /dev/null 2>&1;
+        cd /tmp && curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py > /dev/null 2>&1 && python2 get-pip.py > /dev/null 2>&1;
         pip install -U setuptools > /dev/null 2>&1;
         #Needed for NoSQLMap
         pip install couchdb pbkdf2 pymongo ipcalc > /dev/null 2>&1;    
