@@ -6,7 +6,7 @@ With these tools you can install most of the bug bounty tools with just one comm
 
 ```
 apt-get update -y && apt-get install git -y
-cd /tmp && https://github.com/mrco24/install-tools.git && cd install-tools && ./okvps.sh
+&& git clone https://github.com/mrco24/install-tools.git && cd install-tools && ./okvps.sh
 ```
 
 ## Available tools list
