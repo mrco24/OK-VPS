@@ -1,38 +1,22 @@
 <h1 align="center">
 <br>
-2
-  <a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
-3
-  <br>
-4
-   OK-VPS
-5
-  <br>
-6
+ <a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
+<br>
+ OK-VPS
+<br>
 </h1>
-7
-​<h4 align="center">Bug Bounty Vps Setup Tools Installer</h4>
+<h4 align="center">Bug Bounty Vps Setup Tools Installer</h4>
 9
     <p align="center">
-10
   <a href="https://github.com/mrco24/OK-VPS">
-11
     <img src="https://img.shields.io/github/issues/mrco24/OK-VPS?label=project&logo=ok-vps&style=flat-square>
-12
   </a>
-13
     <a href="https://github.com/mrco24/OK-VPS">
-14
     <img src="https://img.shields.io/static/v1?label=Update&message=V2.0&color=green">
-15
   </a>
-16
   <a href="https://twitter.com/mrco24">
-17
       <img src="https://img.shields.io/twitter/follow/mrco24=social">
-18
   </a>
-19
 </p>
 
 # install-all-tools
