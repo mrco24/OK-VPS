@@ -138,6 +138,14 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Gau installation in progress ...";
 	go install github.com/lc/gau/v2/cmd/gau@latest > /dev/null 2>&1 && ln -s ~/go/bin/gau /usr/local/bin/;
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Gau installation is done !"; echo "";
+	#GF
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF installation in progress ...";
+	go install github.com/tomnomnom/gf@latest > /dev/null 2>&1 && ln -s ~/go/bin/gf /usr/local/bin/;
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF installation in progress ...";
+	#GF_P
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
+	cd /root && mkdir .gf &&  cd /root/install-tools/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/install-tools/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/install-tools/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/install-tools/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
 }
 
 NETWORK_SCANNER () {
