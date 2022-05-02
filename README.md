@@ -5,7 +5,7 @@
 <h4 align="center">Bug Bounty Vps Setup Tools Installer</h4>
 <p align="center">
   <a href="https://github.com/mrco24/OK-VPS">
-    <img src="https://img.shields.io/static/v1?label=Project&message=ZeroInstall&color=green>
+    <img src="https://img.shields.io/static/v1?label=Project&message=OK-VPS&color=green>
   </a>
     <a href="https://github.com/mrco24/OK-VPS">
     <img src="https://img.shields.io/static/v1?label=Update&message=V1.0&color=green">
