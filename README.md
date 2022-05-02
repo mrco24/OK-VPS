@@ -1,9 +1,6 @@
 <h1 align="center">
-<br>
- <a href="https://github.com/mrco24/OK-VPS"><img src="https://imgur.com/a/jI2UMes" alt="OK-VPS"></a>
-<br>
- OK-VPS
-<br>
+<a href="https://cooltext.com"><img src="https://images.cooltext.com/5599194.png" width="241" height="84" alt="Skate" /></a>
+<br />Image by <a href="https://cooltext.com">Cool Text: Free Logos and Buttons</a> - <a href="https://cooltext.com/Edit-Logo?LogoID=4099323414">Create An Image Just Like This</a>
 </h1>
 
 <h4 align="center">Bug Bounty Vps Setup Tools Installer</h4>
