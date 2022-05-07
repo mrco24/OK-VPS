@@ -7,10 +7,10 @@ clear;
 ENVIRONMENT () {
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Packages required installation in progress ...";
 	
-    apt-get update -y > /dev/null 2>&1 && apt install software-properties-common -y -qq &>/dev/null && apt update -y -qq &>/dev/null && apt install git -y -qq &>/dev/null && apt install --assume-yes p7zip-full &>/dev/null && 
+    apt-get update -y > /dev/null 2>&1 && apt install software-properties-common -y -qq &>/dev/null && apt update -y -qq &>/dev/null && apt install git -y -qq &>/dev/null && apt install --assume-yes p7zip-full &>/dev/null2>&1;
     install curl -y -qq &>/dev/null && apt install wget -y -qq &>/dev/null && apt install python3 -y -qq &>/dev/null && apt install python3-pip -y -qq &>/dev/null &&
     apt install dig -y -qq &>/dev/null && apt install host -y -qq &>/dev/null && apt install make -y -qq &>/dev/null && apt install git -y -qq &>/dev/null && 
-    apt install gcc -y -qq &>/dev/null && apt install jq -y -qq &>/dev/null && apt-get install libldns-dev -y -qq;
+    apt install gcc -y -qq &>/dev/null && apt install jq -y -qq &>/dev/null && apt-get install libldns-dev -y -qq  > /dev/null 2>&1;
         apt-get install python > /dev/null 2>&1;
         apt-get install python2 > /dev/null 2>&1;
         apt-get install python3 > /dev/null 2>&1;
