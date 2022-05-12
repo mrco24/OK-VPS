@@ -253,7 +253,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Gxss installation is done !"; echo "";
 	#Findom-xss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"findom-xss installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/dwisiswant0/findom-xss.git > /dev/null 2>&1 && cd findom-xss && chmod +x findom-xss.sh > /dev/null 2>&1;
+	cd /root/OK-VPS/tools && https://github.com/dwisiswant0/findom-xss.git > /dev/null 2>&1 && cd findom-xss && chmod +x findom-xss.sh && rm -r LinkFinder && git clone https://github.com/GerbenJavado/LinkFinder.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"findom-xss installation is done !"; echo "";
 }
 
@@ -393,6 +393,10 @@ USEFUL_TOOLS () {
 	#Jq
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"jq installation in progress ...";
 	apt-install install -y jq > /dev/null 2>&1;
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"jq installation is done !" ${RESTORE}; echo "";
+	#cf_check
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"jq installation in progress ...";
+	go install github.com/dwisiswant0/cf-check@latest > /dev/null 2>&1 && ln -s ~/go/bin/cf-check /usr/local/bin/;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"jq installation is done !" ${RESTORE}; echo "";
 	#Tmux
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Tmux installation in progress ...";
