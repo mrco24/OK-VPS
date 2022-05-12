@@ -356,8 +356,11 @@ SENSITIVE_FINDING() {
 
 Find_Web_Technologies(){
 #wappalyzer-cli
+echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"wappalyzer-cli installation in progress ...";
 cd /root/OK-VPS/tools && git clone https://github.com/gokulapap/wappalyzer-cli  > /dev/null 2>&1 && cd wappalyzer-cli && pip3 install . > /dev/null 2>&1;
+echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"wappalyzer-cli installation in progress ...";
 }
+
 USEFUL_TOOLS () {
 	#installallurls
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"installallurls installation in progress ...";
