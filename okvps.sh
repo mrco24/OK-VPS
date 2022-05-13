@@ -37,7 +37,7 @@ ENVIRONMENT () {
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Packages required installation is done !"; echo "";
 	#Generic fot both OS - Golang environment
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Golang environment installation in progress ...";
-	cd /root/OK-VPS/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && tar xvf go$GOVER.linux-amd64.tar.gz > /dev/null 2>&1 && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
+	cd /root/OK-VPS/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz && tar xvf go$GOVER.linux-amd64.tar.gz && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Golang environment installation is done !"; echo "";
 }
 
@@ -52,7 +52,9 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Assetfinder installation is done !"; echo "";
 	#Findomain
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget install https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux && chmod +x findomain-linux && mv ./findomain-linux /usr/local/bin/findomain;
+	
+	
+	/root/OK-VPS/tools/file && wget install https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux && chmod +x findomain-linux && mv ./findomain-linux /usr/local/bin/findomain;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Findomain installation is done !"; echo "";
 	#Github-subdomains
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Github-subdomains installation in progress ...";
