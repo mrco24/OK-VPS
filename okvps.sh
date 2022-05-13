@@ -378,6 +378,10 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"anew installation in progress ...";
 	go install github.com/tomnomnom/anew@latest > /dev/null 2>&1 && ln -s ~/go/bin/anew /usr/local/bin/;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"anew installation is done !"; echo "";
+	#subzy
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"subzy installation in progress ...";
+	go install -v github.com/lukasikic/subzy@latest > /dev/null 2>&1 && ln -s ~/go/bin/anew /usr/local/bin/;
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"subzy installation in progress ...";
 	#gron
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"gron installation in progress ...";
 	go install github.com/tomnomnom/gron@latest > /dev/null 2>&1 && ln -s ~/go/bin/gron /usr/local/bin/;
