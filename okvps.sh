@@ -153,7 +153,7 @@ WEB_CRAWLING () {
 NETWORK_SCANNER () {
 	#Nmap
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Nmap installation in progress ...";
-	apt-get install nmap -y > /dev/null 2>&1;
+	apt-get install nmap -y && apt install -y libpcap-dev > /dev/null 2>&1;
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Nmap installation is done !"; echo "";
 	#masscan
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Masscan installation in progress ...";
