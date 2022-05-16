@@ -27,17 +27,16 @@ ENVIRONMENT () {
 	#Specific Kali Linux
 		#Specificity :
         apt-get update -y > /dev/null 2>&1;
+	 apt-get upgrade -y > /dev/null 2>&1;
        
 }
 
 
   Go(){
 	#Bash colors
-	sed -i '/^#.*force_color_prompt/s/^#//' ~/.bashrc && source ~/.bashrc
-	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Packages required installation is done !"; echo "";
 	#Generic fot both OS - Golang environment
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Golang environment installation in progress ...";
-	cd /root/OK-VPS/tools/file && apt-get install golang && curl -O https://dl.google.com/go/go$GOVER.linux-amd64.tar.gz && tar xvf go$GOVER.linux-amd64.tar.gz && mv go /usr/local && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc && source ~/.bashrc;
+	cd /root/OK-VPS/tools/file && wget https://storage.googleapis.com/golang/go1.18.2.linux-amd64.tar.gz && tar -zxvf go1.7.1.linux-amd64.tar.gz -C /usr/local/ && echo 'export GOROOT=/usr/local/go' >> ~/.bashrc && echo 'export GOPATH=$HOME/go' >> ~/.bashrc && echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc && apt-get install golang;
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Golang environment installation is done !"; echo "";
 }
 
