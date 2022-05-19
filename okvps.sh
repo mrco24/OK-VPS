@@ -36,7 +36,7 @@ ENVIRONMENT () {
 	#Bash colors
 	#Generic fot both OS - Golang environment
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Golang environment installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget https://storage.googleapis.com/golang/go1.18.2.linux-amd64.tar.gz && tar -zxvf go1.7.1.linux-amd64.tar.gz -C /usr/local/ && echo 'export GOROOT=/usr/local/go' >> ~/.bashrc && echo 'export GOPATH=$HOME/go' >> ~/.bashrc && echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc && apt-get install golang;
+	cd /root/OK-VPS/tools/file && wget https://storage.googleapis.com/golang/go1.18.2.linux-amd64.tar.gz && tar -zxvf go1.18.2.linux-amd64.tar.gz -C /usr/local/ && echo 'export GOROOT=/usr/local/go' >> ~/.bashrc && echo 'export GOPATH=$HOME/go' >> ~/.bashrc && echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc && apt-get install golang;
 	echo -e ${BLUE}"[ENVIRONMENT]" ${GREEN}"Golang environment installation is done !"; echo "";
 }
 
