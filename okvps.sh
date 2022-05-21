@@ -69,6 +69,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Sudomy installation in progress ...";
 	cd /root/OK-VPS/tools && git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install npm && apt-get install jq && npm install -g phantomjs && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat && cp sudomy /usr/local/bin && cp sudomy.api /usr/local/bin && cp slack.conf /usr/local/bin && cp sudomy.conf /usr/local/bin > /dev/null 2>&1 && ln -s /root/OK-VPS/tools/Sudomy/sudomy /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Sudomy installation is done !"; echo "";
+	#Sudomy
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Mapcidr installation in progress ...";
+	go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Mapcidr installation is done !"; echo "";
 }
 
 DNS_RESOLVER () {
