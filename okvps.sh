@@ -320,6 +320,10 @@ JS_HUNTING () {
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"Getjs installation in progress ...";
 	go install github.com/003random/getJS@latest > /dev/null 2>&1 && ln -s ~/go/bin/subjs /usr/local/bin/;
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"Getjs installation in progress ...";
+	#jsscanner
+	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"Jsscanner installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/dark-warlord14/JSScanner > /dev/null 2>&1 && cd JSScanner/ && bash install.sh > /dev/null 2>&1;
+	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"Jsscanner installation in progress ...";
 }
 
 GIT_HUNTING() {
