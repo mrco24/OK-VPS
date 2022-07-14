@@ -149,6 +149,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
 	cd /root && mkdir -p .gf &&  cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
+	#freq
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
+	cd /root/Tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
+        echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
 }
 
 NETWORK_SCANNER () {
