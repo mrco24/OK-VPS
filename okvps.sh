@@ -14,7 +14,7 @@ ENVIRONMENT () {
         apt-get install python > /dev/null 2>&1;
         apt-get install python2 > /dev/null 2>&1;
         apt-get install python3 > /dev/null 2>&1;
-        apt-get install pip -ygo > /dev/null 2>&1;
+        apt-get install pip -y > /dev/null 2>&1;
         python install pip1 > /dev/null 2>&1;
         python install pip2 > /dev/null 2>&1;
         python install pip3 > /dev/null 2>&1;
