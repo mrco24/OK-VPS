@@ -194,6 +194,10 @@ FUZZING_TOOLS () {
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"wfuzz installation in progress ...";
 	apt-install install wfuzz -y > /dev/null 2>&1;
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"wfuzz installation is done !"; echo "";
+	#dirsearch
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"dirsearch installation in progress ...";
+	sudo pip3 install git+https://github.com/maurosoria/dirsearch &>/dev/null
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"dirsearch installation is done !"; echo "";
 }
 
 LFI_TOOLS () {
