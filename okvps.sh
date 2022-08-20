@@ -24,10 +24,12 @@ ENVIRONMENT () {
         python get-install pip.py > /dev/null 2>&1;
         python install-requests > /dev/null 2>&1;
         apt-get update --fix-missing > /dev/null 2>&1;
+	apt-get install unzip > /dev/null 2>&1;
 	#Specific Kali Linux
 		#Specificity :
         apt-get update -y > /dev/null 2>&1;
-	 apt-get upgrade -y > /dev/null 2>&1;
+	apt-get upgrade -y > /dev/null 2>&1;
+	 
        
 }
 
