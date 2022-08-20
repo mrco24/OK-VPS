@@ -51,7 +51,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Assetfinder installation is done !"; echo "";
 	#Findomain
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget install https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux && chmod +x findomain-linux > /dev/null 2>&1 && mv findomain-linux /usr/local/bin/findomain && chmod  +x /usr/local/bin/findomain;
+	cd /root/OK-VPS/tools/file && curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip && unzip findomain-linux-i386.zip && chmod +x findomain > /dev/null 2>&1 && sudo mv findomain /usr/bin/findomain && chmod  +x /usr/local/bin/findomain;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Findomain installation is done !"; echo "";
 	#Github-subdomains
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Github-subdomains installation in progress ...";
