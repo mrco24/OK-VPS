@@ -18,8 +18,8 @@ ENVIRONMENT () {
         python install pip1 > /dev/null 2>&1;
         python install pip2 > /dev/null 2>&1;
         python install pip3 > /dev/null 2>&1;
-        apt-get install libpython-stdlib > /dev/null 2>&1;
-        apt-get install python-argparse > /dev/null 2>&1;
+        apt-get install libpython-stdlib -y > /dev/null 2>&1;
+        apt-get install python-argparse -y > /dev/null 2>&1;
         apt-get autoremove -y > /dev/null 2>&1;
         python get-install pip.py > /dev/null 2>&1;
         python install-requests > /dev/null 2>&1;
@@ -51,7 +51,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Assetfinder installation is done !"; echo "";
 	#Findomain
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";
-	cd /root/OK-VPS/tools/file && curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip && unzip findomain-linux-i386.zip && chmod +x findomain > /dev/null 2>&1 && sudo mv findomain /usr/bin/findomain && chmod  +x /usr/local/bin/findomain;
+	cd /root/OK-VPS/tools/file && curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip > /dev/null 2>&1 && unzip findomain-linux-i386.zip && chmod +x findomain > /dev/null 2>&1 && sudo mv findomain /usr/bin/findomain && chmod  +x /usr/local/bin/findomain;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Findomain installation is done !"; echo "";
 	#Github-subdomains
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Github-subdomains installation in progress ...";
@@ -59,7 +59,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Github-subdomains installation is done !"; echo "";
 	#Amass
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
+	cd /root/OK-VPS/tools/file && wget install https://github.com/OWASP/Amass/releases/download/v$AMASSVER/amass_linux_amd64.zip > /dev/null 2>&1 && unzip amass_linux_amd64.zip > /dev/null 2>&1 && mv amass_linux_amd64/amass /usr/local/bin/;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
 	#Crobat
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Crobat installation in progress ...";
