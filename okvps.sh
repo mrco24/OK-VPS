@@ -7,28 +7,12 @@ clear;
 ENVIRONMENT () {
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Packages required installation in progress ...";
 	
-    apt-get update -y > /dev/null 2>&1 && apt install software-properties-common -y &>/dev/null && apt update -y&>/dev/null && apt install git -y&>/dev/null && apt install --assume-yes p7zip-full &>/dev/null2>&1;
-    apt install wget -y &>/dev/null && apt install python3 -y &>/dev/null && apt install python3-pip -y &>/dev/null &&
-    apt install dig -y &>/dev/null && apt install host -y &>/dev/null && apt install make -y &>/dev/null && apt install git -y &>/dev/null && 
-    apt install gcc -y &>/dev/null && apt install jq -y &>/dev/null && apt-get install libldns-dev -y > /dev/null 2>&1;
+        apt-get update -y > /dev/null 2>&1;
         apt-get install python > /dev/null 2>&1;
         apt-get install python2 > /dev/null 2>&1;
-        apt-get install python3 > /dev/null 2>&1;
+        apt-get install python3 -y > /dev/null 2>&1;
         apt-get install pip -y > /dev/null 2>&1;
-        python install pip1 > /dev/null 2>&1;
-        python install pip2 > /dev/null 2>&1;
-        python install pip3 > /dev/null 2>&1;
-        apt-get install libpython-stdlib -y > /dev/null 2>&1;
-        apt-get install python-argparse -y > /dev/null 2>&1;
-        apt-get autoremove -y > /dev/null 2>&1;
-        python get-install pip.py > /dev/null 2>&1;
-        python install-requests > /dev/null 2>&1;
-        apt-get update --fix-missing > /dev/null 2>&1;
 	apt-get install unzip > /dev/null 2>&1;
-	#Specific Kali Linux
-		#Specificity :
-        apt-get update -y > /dev/null 2>&1;
-	apt-get upgrade -y > /dev/null 2>&1;
 	 
        
 }
