@@ -15,6 +15,7 @@ ENVIRONMENT () {
 	apt-get install unzip > /dev/null 2>&1;
 	apt install curl -y > /dev/null 2>&1;
 	pip3 install colored  > /dev/null 2>&1;
+	apt install snap -y > /dev/null 2>&1;
        
 }
 
