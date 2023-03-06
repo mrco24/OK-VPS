@@ -317,7 +317,7 @@ JS_HUNTING () {
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"Linkfinder installation is done !"; echo "";
 	#SecretFinder
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"SecretFinder installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/m4ll0k/SecretFinder.git > /dev/null 2>&1 && cd SecretFinder && pip3 install -r requirements.txt > /dev/null 2>&1;
+	cd /root/OK-VPS/tools && git clone https://github.com/m4ll0k/SecretFinder.git > /dev/null 2>&1 && cd SecretFinder && pip3 install -r requirements.txt && pip3 install jsbeautifier && pip3 install lxml > /dev/null 2>&1;
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"SecretFinder installation is done !"; echo "";
 	#subjs
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"subjs installation in progress ...";
