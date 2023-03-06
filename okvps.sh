@@ -46,7 +46,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Github-subdomains installation is done !"; echo "";
 	#Amass
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
-	snap install amass;
+	snap install amass && export PATH=$PATH:/snap/bin && snap refresh;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
 	#Crobat
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Crobat installation in progress ...";
