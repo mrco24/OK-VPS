@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 #Creating tools directory if not exist
-mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file;
+mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist;
 clear;
 
 ENVIRONMENT () {
@@ -84,8 +84,12 @@ DNS_RESOLVER () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 	#dnsvalidator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"DNSvalidator installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install > /dev/null 2>&1 && ln -s /root/OK-VPS/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
+	cd /root/OK-VPS/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install &&  pip3 install -e . > /dev/null 2>&1 && ln -s /root/OK-VPS/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"DNSvalidator installation is done !"; echo "";
+	#resolver
+	#echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"SHuffleDNS installation in progress ...";
+        #dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o /root/wordlist/resolvers.txt;
+	#echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 }
 
 VISUAL_/root/OK-VPS/tools () {
@@ -231,7 +235,7 @@ API_TOOLS () {
 WORDLISTS () {
 	#SecLists
 	echo -e ${BLUE}"[WORDLISTS]" ${RED}"SecLists installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/danielmiessler/SecLists.git > /dev/null 2>&1;
+	cd /root/wordlist && git clone https://github.com/danielmiessler/SecLists.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[WORDLISTS]" ${GREEN}"SecLists installation is done !"; echo "";
 }
 
