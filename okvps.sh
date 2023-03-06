@@ -61,7 +61,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Mapcidr installation is done !"; echo "";
 	#AltDns
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}AltDns installation in progress ...";
-	pip3 install py-altdns==1.0.2
+	pip3 install py-altdns==1.0.2 && pip install py-altdns;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}AltDns installation in progress ...";
 }
 
@@ -135,6 +135,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Gau installation in progress ...";
 	go install github.com/lc/gau/v2/cmd/gau@latest > /dev/null 2>&1 && ln -s ~/go/bin/gau /usr/local/bin/;
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Gau installation is done !"; echo "";
+	#katana
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
+	go install github.com/projectdiscovery/katana/cmd/katana@latest > /dev/null 2>&1 && ln -s ~/go/bin/katana /usr/local/bin/; 
+        echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
 	#GF
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF installation in progress ...";
 	go install github.com/tomnomnom/gf@latest > /dev/null 2>&1 && ln -s ~/go/bin/gf /usr/local/bin/;
@@ -147,6 +151,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	cd /root/Tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
         echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
+
 }
 
 NETWORK_SCANNER () {
