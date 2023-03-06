@@ -37,8 +37,8 @@ SUBDOMAINS_ENUMERATION () {
 	go install github.com/tomnomnom/assetfinder@latest > /dev/null 2>&1 && ln -s ~/go/bin/assetfinder /usr/local/bin/;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Assetfinder installation is done !"; echo "";
 	#Findomain
-	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";
-	cd /root/OK-VPS/tools/file && curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip > /dev/null 2>&1 && unzip /root/OK-VPS/tools/file/findomain-linux-i386.zip && chmod +x findomain > /dev/null 2>&1 && cd /root/OK-VPS/tools/file/findomain > /dev/null 2>&1 && mv /usr/bin/findomain && chmod  +x /usr/bin/findomain;
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Findomain installation in progress ...";/usr/bin/
+	cd /root/OK-VPS/tools/file && curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip > /dev/null 2>&1 && unzip /root/OK-VPS/tools/file/findomain-linux-i386.zip && chmod +x findomain > /dev/null 2>&1 && cd /root/OK-VPS/tools/file/findomain > /dev/null 2>&1 && cp findomain /usr/bin/ && chmod  +x /usr/bin/findomain;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Findomain installation is done !"; echo "";
 	#Github-subdomains
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Github-subdomains installation in progress ...";
