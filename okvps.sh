@@ -13,6 +13,7 @@ ENVIRONMENT () {
         apt-get install python3 -y > /dev/null 2>&1;
         apt-get install pip -y > /dev/null 2>&1;
 	apt-get install unzip > /dev/null 2>&1;
+	apt install curl -y > /dev/null 2>&1;
 	 
        
 }
