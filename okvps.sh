@@ -16,6 +16,7 @@ ENVIRONMENT () {
 	apt install curl -y > /dev/null 2>&1;
 	pip3 install colored  > /dev/null 2>&1;
 	apt install snap -y > /dev/null 2>&1;
+	apt install jq -y > /dev/null 2>&1;
        
 }
 
