@@ -17,7 +17,7 @@ ENVIRONMENT () {
 	pip3 install colored  > /dev/null 2>&1;
 	apt install snap -y > /dev/null 2>&1;
 	apt install jq -y > /dev/null 2>&1;
-       
+        apt-get install golang -y > /dev/null 2>&1;
 }
 
 
