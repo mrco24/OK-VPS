@@ -18,6 +18,8 @@ ENVIRONMENT () {
 	apt install snap -y > /dev/null 2>&1;
 	apt install jq -y > /dev/null 2>&1;
         apt-get install golang -y > /dev/null 2>&1;
+	apt install python-pip -y > /dev/null 2>&1;
+	apt install snapd -y > /dev/null 2>&1;
 }
 
 
