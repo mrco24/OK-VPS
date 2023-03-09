@@ -20,6 +20,7 @@ ENVIRONMENT () {
         apt-get install golang -y > /dev/null 2>&1;
 	apt install python-pip -y > /dev/null 2>&1;
 	apt install snapd -y > /dev/null 2>&1;
+	apt install python3-pip -y > /dev/null 2>&1;
 }
 
 
