@@ -405,7 +405,7 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"anew installation is done !"; echo "";
 	#subzy
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"subzy installation in progress ...";
-	go install -v github.com/lukasikic/subzy@latest > /dev/null 2>&1 && ln -s ~/go/bin/subzy /usr/local/bin/;
+	go install -v github.com/LukaSikic/subzy@latest | cp /root/go/bin/subzy /usr/local/bin/;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"subzy installation in progress ...";
 	#gron
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"gron installation in progress ...";
