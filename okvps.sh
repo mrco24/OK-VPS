@@ -336,7 +336,7 @@ JS_HUNTING () {
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"subjs installation is done !"; echo "";
 	#Getjs
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"Getjs installation in progress ...";
-	go install github.com/003random/getJS@latest > /dev/null 2>&1 && ln -s ~/go/bin/subjs /usr/local/bin/;
+	go install github.com/003random/getJS@latest > /dev/null 2>&1 && ln -s ~/go/bin/getJS /usr/local/bin/;
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${GREEN}"Getjs installation in progress ...";
 	#jsscanner
 	echo -e ${BLUE}"[JS FILES HUNTING]" ${RED}"Jsscanner installation in progress ...";
