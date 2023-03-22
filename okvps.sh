@@ -21,6 +21,8 @@ ENVIRONMENT () {
 	apt install python-pip -y > /dev/null 2>&1;
 	apt install snapd -y > /dev/null 2>&1;
 	apt install python3-pip -y > /dev/null 2>&1;
+	pip3 install jsbeautifier > /dev/null 2>&1;
+	pip3 install lxml > /dev/null 2>&1;
 }
 
 
