@@ -36,6 +36,7 @@ apt-get update -y && apt-get install git -y
 - [Github-subdomains](https://github.com/gwen001/github-subdomains)
 - [Subfinder](https://github.com/projectdiscovery/subfinder)
 - [Sudomy](https://github.com/screetsec/Sudomy)
+- [CertCrunchy](https://github.com/joda32/CertCrunchy)
 
 ### DNS resolver
 
@@ -82,6 +83,7 @@ apt-get update -y && apt-get install git -y
 - [ffuf](https://github.com/ffuf/ffuf)
 - [Gobuster](https://github.com/OJ/gobuster)
 - [wfuzz](https://github.com/xmendez/wfuzz) *
+- [feroxbuster](https://github.com/epi052/feroxbuster)
 
 ### LFI tools
 
