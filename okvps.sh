@@ -27,7 +27,7 @@ ENVIRONMENT () {
 
 
 SUBDOMAINS_ENUMERATION () {
-       #Subfinder
+       #Golang
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Golang installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget https://go.dev/dl/go1.19.5.linux-amd64.tar.gz && tar -zxvf go1.19.5.linux-amd64.tar.gz -C /usr/local/ && mkdir ~/.go && GOROOT=/usr/local/go && GOPATH=~/.go && PATH=$PATH:$GOROOT/bin:$GOPATH/bin && update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0 && update-alternatives --set go /usr/local/go/bin/go;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Golang installation is done !"; echo "";
@@ -59,7 +59,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Sudomy installation in progress ...";
 	cd /root/OK-VPS/tools && git clone --recursive https://github.com/screetsec/Sudomy.git > /dev/null 2>&1 && cd Sudomy && python3 -m pip install -r requirements.txt && apt-get install npm && apt-get install jq && npm install -g phantomjs && apt-get install jq nmap phantomjs npm chromium parallel -y && npm i -g wappalyzer wscat && cp sudomy /usr/local/bin && cp sudomy.api /usr/local/bin && cp slack.conf /usr/local/bin && cp sudomy.conf /usr/local/bin > /dev/null 2>&1 && ln -s /root/OK-VPS/tools/Sudomy/sudomy /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Sudomy installation is done !"; echo "";
-	#Sudomy
+	#mapcidr
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Mapcidr installation in progress ...";
 	go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest > /dev/null 2>&1 && ln -s ~/go/bin/mapcidr /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Mapcidr installation is done !"; echo "";
@@ -69,7 +69,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}AltDns installation in progress ...";
 	#CertCrunchy
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
-	git clone https://github.com/joda32/CertCrunchy.git > /dev/null 2>&1 && cd CertCrunchy && sudo pip3 install -r requirements.txt;
+	cd /root/OK-VPS/tools/file && git clone https://github.com/joda32/CertCrunchy.git > /dev/null 2>&1 && cd CertCrunchy && sudo pip3 install -r requirements.txt;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
 }
 
@@ -211,8 +211,12 @@ FUZZING_TOOLS () {
 	sudo pip3 install git+https://github.com/maurosoria/dirsearch &>/dev/null
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"dirsearch installation is done !"; echo "";
 	#feroxbuster
-	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"dirsearch installation in progress ...";
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"feroxbuster installation in progress ...";
 	snap install feroxbuster &>/dev/null
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"feroxbuster installation is done !"; echo "";
+	#feroxbuster2
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"dirsearch installation in progress ...";
+	curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/master/install-nix.sh | bash &>/dev/null
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"dirsearch installation is done !"; echo "";
 }
 
