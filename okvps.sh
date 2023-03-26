@@ -206,6 +206,10 @@ FUZZING_TOOLS () {
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"dirsearch installation in progress ...";
 	sudo pip3 install git+https://github.com/maurosoria/dirsearch &>/dev/null
 	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"dirsearch installation is done !"; echo "";
+	#feroxbuster
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${RED}"dirsearch installation in progress ...";
+	snap install feroxbuster &>/dev/null
+	echo -e ${BLUE}"[FUZZING TOOLS]" ${GREEN}"dirsearch installation is done !"; echo "";
 }
 
 LFI_TOOLS () {
