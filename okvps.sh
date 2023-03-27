@@ -322,7 +322,7 @@ VULNS_SCANNER () {
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
-	GO111MODULE=on go install github.com/jaeles-project/jaeles  > /dev/null 2>&1 && ln -s ~/go/bin/jaeles /usr/local/bin/;
+	GO111MODULE=on go install github.com/jaeles-project/jaeles@latest  > /dev/null 2>&1 && ln -s ~/go/bin/jaeles /usr/local/bin/;
 	cd /root/OK-VPS/tools && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
 	#Nikto
