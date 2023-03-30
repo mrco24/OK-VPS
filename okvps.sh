@@ -71,6 +71,19 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
 	cd /root/OK-VPS/tools/file && git clone https://github.com/joda32/CertCrunchy.git > /dev/null 2>&1 && cd CertCrunchy && sudo pip3 install -r requirements.txt;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
+	#chaos
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
+	go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest > /dev/null 2>&1 && ln -s ~/go/bin/chaos /usr/local/bin/;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
+	#chaos
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
+	go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest > /dev/null 2>&1 && ln -s ~/go/bin/chaos /usr/local/bin/;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
+	#chaos
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
+	shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT && apt install python3-shodan ;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
+	
 }
 
 DNS_RESOLVER () {
