@@ -310,7 +310,7 @@ VULNS_SQLI () {
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${RED}"NoSQLMap installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/codingo/NoSQLMap.git > /dev/null 2>&1 && cd NoSQLMap && python setup.py install > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"NoSQLMap installation is done !"; echo "";
-	#NoSQLMap
+	#ghauri
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${RED}"NoSQLMap installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/r0oth3x49/ghauri.git > /dev/null 2>&1 && cd ghauri && python3 -m pip install --upgrade -r requirements.txt && python3 -m pip install -e . > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"NoSQLMap installation is done !"; echo "";
@@ -341,7 +341,8 @@ VULNS_SCANNER () {
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget https://github.com/jaeles-project/jaeles/releases/download/beta-v0.17/jaeles-v0.17-linux.zip > /dev/null 2>&1 && unzip jaeles-v0.17-linux.zip > /dev/null 2>&1 && mv jaeles /usr/local/bin/;
-	cd /root/OK-VPS/tools && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
+	cd /root/ && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
+	git clone https://github.com/ghsec/ghsec-jaeles-signatures
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
 	#Nikto
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
