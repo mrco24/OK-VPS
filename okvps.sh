@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 #Creating tools directory if not exist
-mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist;
+mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist /root/templates;
 clear;
 
 ENVIRONMENT () {
@@ -336,13 +336,13 @@ VULNS_SCANNER () {
 	#Nuclei + nuclei templates
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei installation in progress ...";
 	GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest > /dev/null 2>&1 && ln -s ~/go/bin/nuclei /usr/local/bin/;
-	nuclei -update-templates > /dev/null 2>&1;
+	cd /root/templates && git clone https://github.com/projectdiscovery/nuclei-templates.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget https://github.com/jaeles-project/jaeles/releases/download/beta-v0.17/jaeles-v0.17-linux.zip > /dev/null 2>&1 && unzip jaeles-v0.17-linux.zip > /dev/null 2>&1 && mv jaeles /usr/local/bin/;
-	cd /root/ && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
-	git clone https://github.com/ghsec/ghsec-jaeles-signatures
+	cd /root/templates && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
+	cd /root/templates && git clone https://github.com/ghsec/ghsec-jaeles-signatures > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
 	#Nikto
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
