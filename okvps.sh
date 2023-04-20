@@ -75,15 +75,18 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
 	go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest > /dev/null 2>&1 && ln -s ~/go/bin/chaos /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
-	#chaos
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
-	go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest > /dev/null 2>&1 && ln -s ~/go/bin/chaos /usr/local/bin/;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
-	#chaos
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
+	#shodan
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"shodan installation in progress ...";
 	shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT && apt install python3-shodan ;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
-	
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"shodan installation is done !"; echo "";
+	#gotator
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"gotator installation in progress ...";
+	go install github.com/Josue87/gotator@latest > /dev/null 2>&1 && ln -s ~/go/bin/gotator /usr/local/bin/;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"gotator installation is done !"; echo "";
+	#AnalyticsRelationships
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"AnalyticsRelationships installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/Josue87/AnalyticsRelationships.git  > /dev/null 2>&1 && cd AnalyticsRelationships && go build -ldflags "-s -w"; 
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"AnalyticsRelationships installation is done !"; echo "";
 }
 
 DNS_RESOLVER () {
