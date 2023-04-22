@@ -39,6 +39,7 @@ apt-get update -y && apt-get install git -y
 - [CertCrunchy](https://github.com/joda32/CertCrunchy)
 - [AnalyticsRelationships](https://github.com/Josue87/AnalyticsRelationships)
 - [Gotator](https://github.com/Josue87/gotator)
+- [galer](https://github.com/dwisiswant0/galer)
 
 
 ### DNS resolver
