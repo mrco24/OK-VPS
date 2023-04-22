@@ -87,6 +87,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"AnalyticsRelationships installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/Josue87/AnalyticsRelationships.git  > /dev/null 2>&1 && cd AnalyticsRelationships && go build -ldflags "-s -w"; 
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"AnalyticsRelationships installation is done !"; echo "";
+	#Galer
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Galer installation in progress ...";
+	GO111MODULE=on go install -v github.com/dwisiswant0/galer@latest > /dev/null 2>&1 && ln -s ~/go/bin/galer /usr/local/bin/;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
 }
 
 DNS_RESOLVER () {
