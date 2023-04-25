@@ -99,6 +99,9 @@ apt-get update -y && apt-get install git -y
 - [Gopherus](https://github.com/tarunkant/Gopherus)
 - [Interactsh](https://github.com/projectdiscovery/interactsh)
 
+### Http-Request-Smugglingh
+- [Http-Request-Smugglingh](https://github.com/anshumanpattnaik/http-request-smugglingh)
+
 ### SSTI tools
 
 - [tplmap](https://github.com/epinna/tplmap) *
