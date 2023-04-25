@@ -262,6 +262,13 @@ SSRF_TOOLS () {
 	echo -e ${BLUE}"[SSRF TOOLS]" ${GREEN}"Interactsh installation is done !"; echo "";
 }
 
+Http-Request-Smuggling () {
+	#tplmap
+	echo -e ${BLUE}"[SSTI TOOLS]" ${RED}"Http-Request-Smuggling installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/anshumanpattnaik/http-request-smuggling.git > /dev/null 2>&1 && cd http-request-smuggling && pip3 install -r requirements.txt > /dev/null 2>&1;
+	echo -e ${BLUE}"[SSTI TOOLS]" ${GREEN}"Http-Request-Smuggling installation is done !"; echo "";
+}
+
 SSTI_TOOLS () {
 	#tplmap
 	echo -e ${BLUE}"[SSTI TOOLS]" ${RED}"tplmap installation in progress ...";
