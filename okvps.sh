@@ -289,8 +289,8 @@ WORDLISTS () {
 	#SecLists
 	echo -e ${BLUE}"[WORDLISTS]" ${RED}"SecLists installation in progress ...";
 	cd /root/wordlist && git clone https://github.com/danielmiessler/SecLists.git > /dev/null 2>&1;
-	cd /root/wordlist && https://github.com/orwagodfather/WordList.git  > /dev/null 2>&1;
-	cd /root/wordlist && https://github.com/mrco24/mrco24-wordlist.git > /dev/null 2>&1;
+	cd /root/wordlist && git clone https://github.com/orwagodfather/WordList.git  > /dev/null 2>&1;
+	cd /root/wordlist && git clone https://github.com/mrco24/mrco24-wordlist.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[WORDLISTS]" ${GREEN}"SecLists installation is done !"; echo "";
 }
 
