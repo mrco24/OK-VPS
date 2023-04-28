@@ -51,6 +51,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
 	snap install amass && export PATH=$PATH:/snap/bin && snap refresh;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
+	#Lilly
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Lilly installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/Dheerajmadhukar/Lilly.git  > /dev/null 2>&1 && cd Lilly && chmod +x lilly.sh;
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Lilly installation is done !"; echo "";
 	#Crobat
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Crobat installation in progress ...";
 	go install github.com/cgboal/sonarsearch/cmd/crobat@latest > /dev/null 2>&1 && ln -s ~/go/bin/crobat /usr/local/bin/;
