@@ -267,7 +267,7 @@ SSRF_TOOLS () {
 }
 
 Http-Request-Smuggling () {
-	#tplmap
+	#Request-Smuggling
 	echo -e ${BLUE}"[SSTI TOOLS]" ${RED}"Http-Request-Smuggling installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/anshumanpattnaik/http-request-smuggling.git > /dev/null 2>&1 && cd http-request-smuggling && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[SSTI TOOLS]" ${GREEN}"Http-Request-Smuggling installation is done !"; echo "";
