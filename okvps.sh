@@ -165,7 +165,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Waybackurls installation is done !"; echo "";
 	#Gua
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Gau installation in progress ...";
-	go install github.com/lc/gau/v2/cmd/gau@latest > /dev/null 2>&1 && ln -s ~/go/bin/gau /usr/local/bin/;
+	cd /root/OK-VPS/tools && wget https://github.com/lc/gau/releases/download/v2.1.2/gau_2.1.2_linux_amd64.tar.gz && tar xvf gau_2.1.2_linux_amd64.tar.gz > /dev/null 2>&1 && mv gau /usr/local/bin/;
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Gau installation is done !"; echo "";
 	#katana
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
