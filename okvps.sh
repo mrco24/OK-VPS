@@ -8,7 +8,6 @@ ENVIRONMENT () {
 	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Packages required installation in progress ...";
 	
         apt-get update -y > /dev/null 2>&1;
-	apt-get install golang -y > /dev/null 2>&1;
         apt-get install python > /dev/null 2>&1;
         apt-get install python2 > /dev/null 2>&1;
         apt-get install python3 -y > /dev/null 2>&1;
