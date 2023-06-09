@@ -161,10 +161,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Waybackurls installation in progress ...";
 	go install github.com/tomnomnom/waybackurls@latest > /dev/null 2>&1 && ln -s ~/go/bin/waybackurls /usr/local/bin/;
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Waybackurls installation is done !"; echo "";
-	#Gua
-	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Gau installation in progress ...";
-	cd /root/OK-VPS/tools && wget https://github.com/lc/gau/releases/download/v2.1.2/gau_2.1.2_linux_amd64.tar.gz && tar -zxvf gau_2.1.2_linux_amd64.tar.gz > /dev/null 2>&1 && mv gau /usr/local/bin/;
-	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Gau installation is done !"; echo "";
+	#Guaplus
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Gauplus installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/bp0lr/gauplus.git && cd gauplus && go build && mv gauplus /usr/local/bin/;
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Gauplus installation is done !"; echo "";
 	#katana
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	go install github.com/projectdiscovery/katana/cmd/katana@latest > /dev/null 2>&1 && ln -s ~/go/bin/katana /usr/local/bin/; 
