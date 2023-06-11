@@ -177,6 +177,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
 	cd /root && mkdir -p .gf &&  cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
+	#uar
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
+	cd /root/OK-VPS/tools/file && wget https://github.com/s0md3v/uro/archive/refs/tags/1.0.0-beta.zip && unzip 1.0.0-beta.zip && cd uro-1.0.0-beta && python3 setup.py install && cp -r  uro /usr/bin; 
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
 	#freq
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	cd /root/Tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
@@ -211,7 +215,8 @@ HTTP_PARAMETER () {
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
+	cd /root/OK-VPS/tools/file && 
+	install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"x8 installation is done !"; echo "";
 }
 
@@ -424,6 +429,10 @@ SENSITIVE_FINDING() {
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Ripgrep installation in progress ...";
 	apt-install install -y ripgrep > /dev/null 2>&1
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Ripgrep installation is done !" ${RESTORE}; echo "";
+	#Ripgrep
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Gau-Expose installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/tamimhasan404/Gau-Expose.git > /dev/null 2>&1
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Gau-Expose installation is done !" ${RESTORE}; echo "";
 }
 
 Find_Web_Technologies(){
