@@ -16,7 +16,7 @@
 
 # install-all-tools
 
-With these tools you can install most of the bug bounty tools with just one command and The tool has been modified and spelled many tools ## special thanks @supr4s Because most of these tools modify his tools
+With these tools you can install most of the bug bounty tools with just one command 
 
 ## Installation 
 
