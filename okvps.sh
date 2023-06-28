@@ -26,7 +26,7 @@ ENVIRONMENT () {
 SUBDOMAINS_ENUMERATION () {
        #Golang
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Golang installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget https://go.dev/dl/go1.19.5.linux-amd64.tar.gz && tar -zxvf go1.19.5.linux-amd64.tar.gz -C /usr/local/ && mkdir ~/.go && GOROOT=/usr/local/go && GOPATH=~/.go && PATH=$PATH:$GOROOT/bin:$GOPATH/bin && update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0 && update-alternatives --set go /usr/local/go/bin/go;
+	cd /root/OK-VPS/tools/file && wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz && tar -zxvf go1.20.5.linux-amd64.tar.gz -C /usr/local/ && mkdir ~/.go && GOROOT=/usr/local/go && GOPATH=~/.go && PATH=$PATH:$GOROOT/bin:$GOPATH/bin && update-alternatives --install "/usr/bin/go" "go" "/usr/local/go/bin/go" 0 && update-alternatives --set go /usr/local/go/bin/go;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Golang installation is done !"; echo "";
 	#Subfinder
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Subfinder installation in progress ...";
