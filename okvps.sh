@@ -121,7 +121,7 @@ DNS_RESOLVER () {
 	#echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 }
 
-VISUAL_/root/OK-VPS/tools () {
+VISUAL_tools () {
 	#Aquatone
 	echo -e ${BLUE}"[VISUAL /root/OK-VPS/tools]" ${RED}"Aquatone installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget install https://github.com/michenriksen/aquatone/releases/download/v$AQUATONEVER/aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && unzip aquatone_linux_amd64_$AQUATONEVER.zip > /dev/null 2>&1 && mv aquatone /usr/local/bin/;
