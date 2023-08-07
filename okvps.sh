@@ -349,6 +349,10 @@ CMS_SCANNER () {
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"Droopescan installation in progress ...";
 	pip3 install droopescan > /dev/null 2>&1;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"Droopescan installation is done !"; echo "";
+        #Nrich
+	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"Droopescan installation in progress ...";
+	wget https://gitlab.com/api/v4/projects/33695681/packages/generic/nrich/latest/nrich_latest_amd64.deb && dpkg -i nrich_latest_amd64.deb > /dev/null 2>&1;
+	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"Droopescan installation is done !"; echo "";
 	#AEM-Hacking
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"AEM-Hacking installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/0ang3el/aem-hacker.git > /dev/null 2>&1 && cd aem-hacker && pip3 install -r requirements.txt > /dev/null 2>&1;
