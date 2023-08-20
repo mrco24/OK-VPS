@@ -92,6 +92,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Galer installation in progress ...";
 	GO111MODULE=on go install -v github.com/dwisiswant0/galer@latest > /dev/null 2>&1 && ln -s ~/go/bin/galer /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
+        #knockpy
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"knockpy installation in progress ...";
+	apt install knockpy -y
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"knockpy installation is done !"; echo "";
 }
 
 DNS_RESOLVER () {
