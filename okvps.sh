@@ -94,8 +94,12 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
         #knockpy
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"knockpy installation in progress ...";
-        cd /root/OK-VPS/tools/file && wget https://github.com/guelfoweb/knock/archive/refs/tags/5.4.0.zip && unzip 5.4.0.zip && cd knock-5.4.0 && python3 setup.py install;
+        cd /root/OK-VPS/tools/file && wget https://github.com/guelfoweb/knock/archive/refs/tags/5.4.0.zip && unzip 5.4.0.zip && cd knock-5.4.0 && python3 setup.py install && knockpy --set apikey-virustotal=fbbb048214f36feb32fcf7e8aa262c26b2dfe5051d02de7d85da6b3acbbed778;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"knockpy installation is done !"; echo "";
+        #censys
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Censys installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Censys installation is done !"; echo ""
 }
 
 DNS_RESOLVER () {
@@ -123,6 +127,8 @@ DNS_RESOLVER () {
 	#echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"SHuffleDNS installation in progress ...";
         #dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o /root/wordlist/resolvers.txt;
 	#echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
+
+ 
 }
 
 VISUAL_tools () {
