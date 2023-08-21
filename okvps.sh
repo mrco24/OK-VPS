@@ -78,7 +78,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
 	#shodan
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"shodan installation in progress ...";
-	shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT && apt install python3-shodan ;
+	apt install python3-shodan && shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"shodan installation is done !"; echo "";
 	#gotator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"gotator installation in progress ...";
@@ -94,7 +94,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
         #knockpy
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"knockpy installation in progress ...";
-	apt install knockpy -y
+        cd /root/OK-VPS/tools/file && wget https://github.com/guelfoweb/knock/archive/refs/tags/5.4.0.zip && unzip 5.4.0.zip && cd knock-5.4.0 && python3 setup.py install;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"knockpy installation is done !"; echo "";
 }
 
