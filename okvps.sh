@@ -66,7 +66,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Mapcidr installation is done !"; echo "";
 	#AltDns
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}AltDns installation in progress ...";
-	pip3 install py-altdns==1.0.2 && pip install py-altdns;
+	cd /root/OK-VPS/tools/file && git clone https://github.com/infosec-au/altdns.git && cd altdns && pip install --upgrade pip setuptools pyopenssl requests urllib3 cachecontrol && pip install -r requirements.txt;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}AltDns installation in progress ...";
 	#CertCrunchy
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
