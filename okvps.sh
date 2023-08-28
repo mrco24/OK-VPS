@@ -101,7 +101,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"knockpy installation is done !"; echo "";
         #censys
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Censys installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
+	cd /root/OK-VPS/tools && export CENSYS_API_ID=303b2554-31b0-4e2d-a036-c869f23bfb76 && export CENSYS_API_SECRET=sB8T2K8en7LW6GHOkKPOfEDVpdmaDj6t && cp .env.template .env && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Censys installation is done !"; echo ""
 }
 
