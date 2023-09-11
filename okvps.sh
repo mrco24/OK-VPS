@@ -124,7 +124,7 @@ DNS_RESOLVER () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"SHuffelDNS installation is done !"; echo "";
 	#dnsvalidator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"DNSvalidator installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/vortexau/dnsvalidator.git > /dev/null 2>&1 && cd dnsvalidator && python3 setup.py install &&  pip3 install contextvars && pip3 install -e . > /dev/null 2>&1 && ln -s /root/OK-VPS/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
+	cd /root/OK-VPS/tools && git clone https://github.com/vortexau/dnsvalidator.git && cd dnsvalidator && python3 setup.py install &&  pip3 install contextvars && pip3 install -e . && ln -s /root/OK-VPS/tools/dnsvalidator/dnsvalidator /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"DNSvalidator installation is done !"; echo "";
 	#resolver
 	#echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"SHuffleDNS installation in progress ...";
