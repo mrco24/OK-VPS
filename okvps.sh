@@ -4,28 +4,6 @@
 mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist /root/templates;
 clear;
 
-ENVIRONMENT () {
-	echo -e ${BLUE}"[ENVIRONMENT]" ${RED}"Packages required installation in progress ...";
-        apt-get install python -y > /dev/null 2>&1;
-        apt-get install python2 -y > /dev/null 2>&1;
-        apt-get install python3 -y > /dev/null 2>&1;
-        apt-get install python3 -y > /dev/null 2>&1;
-	apt install python3.9 -y > /dev/null 2>&1;
-        apt install python3.9-venv > /dev/null 2>&1;
-        apt-get install pip -y > /dev/null 2>&1;
-	apt-get install unzip -y > /dev/null 2>&1;
-	apt install curl -y > /dev/null 2>&1;
-	pip3 install colored  > /dev/null 2>&1;
-	apt install snap -y > /dev/null 2>&1;
-	apt install jq -y > /dev/null 2>&1;
-	apt install python-pip -y > /dev/null 2>&1;
-	apt install snapd -y > /dev/null 2>&1;
-	apt install python3-pip -y > /dev/null 2>&1;
-	pip3 install jsbeautifier > /dev/null 2>&1;
-	pip3 install lxml > /dev/null 2>&1;
-}
-
-
 SUBDOMAINS_ENUMERATION () {
        #Golang
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Golang installation in progress ...";
@@ -511,4 +489,4 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
 }
 
-ENVIRONMENT && SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
+SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
