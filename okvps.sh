@@ -301,6 +301,10 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"XSStrike installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/s0md3v/XSStrike > /dev/null 2>&1 && cd XSStrike && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"XSStrike installation is done !"; echo "";
+ 	#XSS_VIBES
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"XSS_VIBES installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/faiyazahmad07/xss_vibes.git > /dev/null 2>&1 && cd xss_vibes && pip3 install -r requirements > /dev/null 2>&1;
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"XSS_VIBES installation is done !"; echo "";
 	#kxss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
 	cd /root/OK-VPS/tools && wget https://github.com/tomnomnom/hacks/archive/refs/heads/master.zip && unzip master.zip && cd hacks-master/kxss/ && go env -w GO111MODULE=auto && go build && cp kxss /usr/local/bin;
