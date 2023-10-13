@@ -59,7 +59,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
 	#shodan
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"shodan installation in progress ...";
-	apt install python3-shodan && shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT;
+	apt install python3-shodan -y && shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"shodan installation is done !"; echo "";
 	#gotator
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"gotator installation in progress ...";
