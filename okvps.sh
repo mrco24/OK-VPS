@@ -54,33 +54,41 @@ SUBDOMAINS_ENUMERATION () {
 	cd /root/OK-VPS/tools/file && git clone https://github.com/joda32/CertCrunchy.git > /dev/null 2>&1 && cd CertCrunchy && sudo pip3 install -r requirements.txt;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}CertCrunchy installation in progress ...";
 	#chaos
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"chaos installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"chaos installation in progress ...";
 	go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest > /dev/null 2>&1 && ln -s ~/go/bin/chaos /usr/local/bin/;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"chaos installation is done !"; echo "";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"chaos installation is done !"; echo "";
 	#shodan
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"shodan installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"shodan installation in progress ...";
 	apt install python3-shodan && shodan init Dw9DTE811cfQ6j59jGLfVAWAMDr0MCTT;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"shodan installation is done !"; echo "";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"shodan installation is done !"; echo "";
 	#gotator
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"gotator installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"gotator installation in progress ...";
 	go install github.com/Josue87/gotator@latest > /dev/null 2>&1 && ln -s ~/go/bin/gotator /usr/local/bin/;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"gotator installation is done !"; echo "";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"gotator installation is done !"; echo "";
+        #ctfr
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"ctfr installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/UnaPibaGeek/ctfr.git && cd ctfr/ && pip3 install -r requirements.txt;
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"ctfr installation is done !"; echo "";
+        #cero
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"cero installation in progress ...";
+	go install github.com/glebarez/cero@latest > /dev/null 2>&1 && ln -s ~/go/bin/cero /usr/local/bin/;
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"cero installation is done !"; echo "";
 	#AnalyticsRelationships
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"AnalyticsRelationships installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"AnalyticsRelationships installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/Josue87/AnalyticsRelationships.git  > /dev/null 2>&1 && cd AnalyticsRelationships && go build -ldflags "-s -w && cp -r analyticsrelationships /usr/local/bin"; 
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"AnalyticsRelationships installation is done !"; echo "";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"AnalyticsRelationships installation is done !"; echo "";
 	#Galer
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Galer installation in progress ...";
 	GO111MODULE=on go install -v github.com/dwisiswant0/galer@latest > /dev/null 2>&1 && ln -s ~/go/bin/galer /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
         #knockpy
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"knockpy installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"knockpy installation in progress ...";
         cd /root/OK-VPS/tools/file && wget https://github.com/guelfoweb/knock/archive/refs/tags/5.4.0.zip && unzip 5.4.0.zip && cd knock-5.4.0 && python3 setup.py install && knockpy --set apikey-virustotal=fbbb048214f36feb32fcf7e8aa262c26b2dfe5051d02de7d85da6b3acbbed778;
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"knockpy installation is done !"; echo "";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"knockpy installation is done !"; echo "";
         #censys
-	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Censys installation in progress ...";
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Censys installation in progress ...";
 	cd /root/OK-VPS/tools && export CENSYS_API_ID=303b2554-31b0-4e2d-a036-c869f23bfb76 && export CENSYS_API_SECRET=sB8T2K8en7LW6GHOkKPOfEDVpdmaDj6t && cp .env.template .env && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
-	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Censys installation is done !"; echo ""
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Censys installation is done !"; echo ""
 }
 
 DNS_RESOLVER () {
