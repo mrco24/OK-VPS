@@ -27,7 +27,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Github-subdomains installation is done !"; echo "";
 	#Amass
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Amass installation in progress ...";
-	snap install amass && export PATH=$PATH:/snap/bin && snap refresh;
+	go install -v github.com/owasp-amass/amass/v3/...@master > /dev/null 2>&1 && ln -s ~/go/bin/amass /usr/local/bin/ && cd && cd .config && mkdir amass && cd amass && mkdir config.ini;
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Amass installation is done !"; echo "";
 	#Lilly
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Lilly installation in progress ...";
