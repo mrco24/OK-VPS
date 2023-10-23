@@ -204,6 +204,10 @@ NETWORK_SCANNER () {
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Naabu installation in progress ...";
 	GO111MODULE=on go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest > /dev/null 2>&1 && ln -s ~/go/bin/naabu /usr/local/bin/;
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Naabu installation is done !"; echo "";
+        #unimap
+	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"unimap installation in progress ...";
+	cd /root/OK-VPS/tools && wget -N -c https://github.com/Edu4rdSHL/unimap/releases/download/0.5.1/unimap-linux && mv unimap-linux /usr/local/bin/unimap && chmod 755 /usr/local/bin/unimap && strip -s /usr/local/bin/unimap;
+	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"unimap installation is done !"; echo "";
 }
 
 HTTP_PARAMETER () {
