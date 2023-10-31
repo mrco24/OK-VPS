@@ -213,6 +213,7 @@ NETWORK_SCANNER () {
 HTTP_PARAMETER () {
 	#Arjun
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"Arjun installation in progress ...";
+        pip3 install arjun;
         cd /root/OK-VPS/tools && git clone https://github.com/edduu/Arjun.git && cd Arjun && python3 setup.py install;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
