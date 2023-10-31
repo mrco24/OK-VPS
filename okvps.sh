@@ -153,7 +153,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Hakrawler installation is done !"; echo "";
 	#ParamSpider
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"ParamSpider installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/devanshbatham/paramspider > /dev/null 2>&1 && cd ParamSpider && pip install .; 
+	cd /root/OK-VPS/tools && git clone https://github.com/devanshbatham/paramspider > /dev/null 2>&1 && cd ParamSpider && apt install python-pip -y && pip install .; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"ParamSpider installation is done !"; echo "";
 	#Waybackurls
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Waybackurls installation in progress ...";
