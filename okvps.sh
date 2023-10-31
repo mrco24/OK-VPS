@@ -213,12 +213,11 @@ NETWORK_SCANNER () {
 HTTP_PARAMETER () {
 	#Arjun
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"Arjun installation in progress ...";
-	pip3 install arjun > /dev/null 2>&1;
-        cd /root/OK-VPS/tools/file && git clone https://github.com/edduu/Arjun.git && cd Arjun && python3 setup.py install;
+        cd /root/OK-VPS/tools && git clone https://github.com/edduu/Arjun.git && cd Arjun && python3 setup.py install;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
-	cd /root/OK-VPS/tools/file && 
+	cd /root/OK-VPS/tools && 
 	install https://github.com/Sh1Yo/x8/releases/download/v"$X8VER"/x8_linux.tar.gz > /dev/null 2>&1 && tar -zxvf x8_linux.tar.gz > /dev/null 2>&1 && mv x8 /usr/local/bin/x8;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"x8 installation is done !"; echo "";
 }
