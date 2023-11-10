@@ -455,6 +455,10 @@ echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"wappalyzer-cli installation in progress .
 }
 
 USEFUL_TOOLS () {
+        #tok
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
+	GO111MODULE=on go get -u github.com/mrco24/tok > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"tok installation is done !"; echo "";
 	#installallurls
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"installallurls installation in progress ...";
 	GO111MODULE=on go install -v github.com/lc/gau@latest > /dev/null 2>&1 && ln -s ~/go/bin/gau /usr/local/bin/;
