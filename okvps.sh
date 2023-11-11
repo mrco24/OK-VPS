@@ -89,6 +89,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Censys installation in progress ...";
 	cd /root/OK-VPS/tools && export CENSYS_API_ID=303b2554-31b0-4e2d-a036-c869f23bfb76 && export CENSYS_API_SECRET=sB8T2K8en7LW6GHOkKPOfEDVpdmaDj6t && cp .env.template .env && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Censys installation is done !"; echo ""
+        #quickcert
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"quickcert installation in progress ...";
+        GO111MODULE=on go install -v github.com/c3l3si4n/quickcert@HEAD > /dev/null 2>&1 && ln -s ~/go/bin/quickcert /usr/local/bin/;
+	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"quickcert installation is done !"; echo ""
 }
 
 DNS_RESOLVER () {
