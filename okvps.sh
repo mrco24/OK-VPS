@@ -177,9 +177,8 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF installation in progress ...";
 	#GF_P
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
-	cd /root && mkdir -p .gf &&  cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && cp *.json $HOME/.gf; 
-	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
-	#uar
+        cd &&  mkdir -p .gf && cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && wget https://raw.githubusercontent.com/mrco24/Patterns/main/my-lfi.json && cp *.json $HOME/.gf;	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
+	#uro
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget https://github.com/s0md3v/uro/archive/refs/tags/1.0.0-beta.zip && unzip 1.0.0-beta.zip && cd uro-1.0.0-beta && python3 setup.py install && cp -r  uro /usr/bin; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
