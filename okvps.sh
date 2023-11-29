@@ -387,6 +387,10 @@ VULNS_SCANNER () {
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
 	apt-install install -y nikto > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nikto installation is done !"; echo "";
+        #Xray
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Xray installation in progress ...";
+	cd /root/templates && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && cp -r xray_linux_amd64 /usr/local/bin && cd /usr/local/bin && cp -r xray_linux_amd64 /usr/local/bin;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Xray installation is done !"; echo "";
 }
 
 JS_HUNTING () {
