@@ -450,7 +450,7 @@ SENSITIVE_FINDING() {
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Ripgrep installation is done !" ${RESTORE}; echo "";
 	#Ripgrep
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Gau-Expose installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/tamimhasan404/Gau-Expose.git > /dev/null 2>&1
+	cd /root/OK-VPS/tools && git clone https://github.com/tamimhasan404/Gau-Expose.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Gau-Expose installation is done !" ${RESTORE}; echo "";
 }
 
@@ -462,6 +462,14 @@ echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"wappalyzer-cli installation in progress .
 }
 
 USEFUL_TOOLS () {
+        #Waymore
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Waymore installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/waymore.git && cd waymore && python setup.py install && pip3 install -r requirements.txt > /dev/null 2>&1;
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Waymore installation is done !" ${RESTORE}; echo "";
+        #xnLinkFinder
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"xnLinkFinder installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git && cd xnLinkFinder && python setup.py install > /dev/null 2>&1;
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"xnLinkFinder installation is done !" ${RESTORE}; echo "";
         #tok
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
 	GO111MODULE=on go get -u github.com/mrco24/tok > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
