@@ -171,6 +171,15 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	go install github.com/projectdiscovery/katana/cmd/katana@latest > /dev/null 2>&1 && ln -s ~/go/bin/katana /usr/local/bin/; 
         echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
+
+        #Waymore
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Waymore installation in progress ...";
+	git clone https://github.com/xnl-h4ck3r/waymore.git /opt/waymore || git -C /opt/waymore pull && pip3 install -r /opt/waymore/requirements.txt && ln -s /opt/waymore//waymore.py /usr/local/bin/waymore && chmod +x /usr/local/bin/waymore > /dev/null 2>&1;
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Waymore installation is done !" ${RESTORE}; echo "";
+        #xnLinkFinder
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"xnLinkFinder installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git && cd xnLinkFinder && python setup.py install > /dev/null 2>&1;
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"xnLinkFinder installation is done !" ${RESTORE}; echo "";
 	#GF
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF installation in progress ...";
 	go install github.com/tomnomnom/gf@latest > /dev/null 2>&1 && ln -s ~/go/bin/gf /usr/local/bin/;
@@ -462,14 +471,6 @@ echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"wappalyzer-cli installation in progress .
 }
 
 USEFUL_TOOLS () {
-        #Waymore
-	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Waymore installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/waymore.git && cd waymore && python setup.py install && pip3 install -r requirements.txt > /dev/null 2>&1;
-	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Waymore installation is done !" ${RESTORE}; echo "";
-        #xnLinkFinder
-	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"xnLinkFinder installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git && cd xnLinkFinder && python setup.py install > /dev/null 2>&1;
-	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"xnLinkFinder installation is done !" ${RESTORE}; echo "";
         #tok
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
 	GO111MODULE=on go get -u github.com/mrco24/tok > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
