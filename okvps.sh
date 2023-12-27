@@ -226,7 +226,7 @@ HTTP_PARAMETER () {
 	#Arjun
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"Arjun installation in progress ...";
         pip3 install arjun;
-        cd /root/OK-VPS/tools && git clone https://github.com/edduu/Arjun.git && cd Arjun && python3 setup.py install;
+        cd /root/OK-VPS/tools && https://github.com/s0md3v/Arjun.git && cd Arjun && pip3 install arjun && python3 setup.py install;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
