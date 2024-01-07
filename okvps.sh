@@ -1,6 +1,5 @@
-#!/bin/bash -i
+#!/bin/bash
 
-#Creating tools directory if not exist
 mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist /root/templates;
 clear;
 
