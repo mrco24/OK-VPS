@@ -474,6 +474,10 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Oralyzer installation in progress ...";
 	cd /root/OK-VPS/tools &&  git clone https://github.com/r0075h3ll/Oralyzer.git && pip3 install -r requirements.txt;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Oralyzer installation is done !"; echo "";
+        #Notify
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
+	go install -v github.com/projectdiscovery/notify/cmd/notify@latest > /dev/null 2>&1 && ln -s ~/go/bin/notify /usr/local/bin/;
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"tok installation is done !"; echo "";
         #tok
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
 	GO111MODULE=on go get -u github.com/mrco24/tok > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
