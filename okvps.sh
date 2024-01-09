@@ -375,6 +375,10 @@ CMS_SCANNER () {
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"AEM-Hacking installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/0ang3el/aem-hacker.git > /dev/null 2>&1 && cd aem-hacker && pip3 install -r requirements.txt > /dev/null 2>&1;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"AEM-Hacking installation is done !"; echo "";
+ 	#WhatWaf
+	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"WPScan  installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/Ekultek/WhatWaf.git > /dev/null 2>&1 && cd WhatWaf && cp -r /root/tools/WhatWeb/WhatWaf/whatwaf /usr/local/bin;
+	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"WPScan installation is done !"; echo "";
 }
 
 VULNS_SCANNER () {
