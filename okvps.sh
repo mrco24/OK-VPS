@@ -464,6 +464,10 @@ SENSITIVE_FINDING() {
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Gau-Expose installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/tamimhasan404/Gau-Expose.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Gau-Expose installation is done !" ${RESTORE}; echo "";
+        #Mantra
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Mantra installation in progress ...";
+	go install github.com/MrEmpy/mantra@latest && cp -r /root/go/bin/mantra /usr/local/bin > /dev/null 2>&1;
+	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Mantra installation is done !" ${RESTORE}; echo "";
 }
 
 Find_Web_Technologies(){
