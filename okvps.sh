@@ -541,6 +541,10 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Uro installation in progress ...";
 	pip3 install uro > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
+        #SploitScan
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"SploitScan installation in progress ...";
+	cd /root/OK-VPS/tools && https://github.com/xaitax/SploitScan.git > /dev/null 2>&1 && cd SploitScan > /dev/null 2>&1;
+	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"SploitScan installation is done !"; echo "";
 }
 
 SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
