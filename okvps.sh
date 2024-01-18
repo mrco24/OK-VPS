@@ -170,11 +170,14 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	go install github.com/projectdiscovery/katana/cmd/katana@latest > /dev/null 2>&1 && ln -s ~/go/bin/katana /usr/local/bin/; 
         echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
-
         #Waymore
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Waymore installation in progress ...";
 	git clone https://github.com/xnl-h4ck3r/waymore.git /opt/waymore || git -C /opt/waymore pull && pip3 install -r /opt/waymore/requirements.txt && ln -s /opt/waymore//waymore.py /usr/local/bin/waymore && chmod +x /usr/local/bin/waymore > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Waymore installation is done !" ${RESTORE}; echo "";
+        #Parameters
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Parameters installation in progress ...";
+	go install github.com/mrco24/parameters@latest > /dev/null 2>&1 && ln -s ~/go/bin/parameters /usr/local/bin/;
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Parameters installation is done !"; echo "";
         #xnLinkFinder
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"xnLinkFinder installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git && cd xnLinkFinder && python setup.py install > /dev/null 2>&1;
