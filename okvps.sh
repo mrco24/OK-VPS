@@ -201,7 +201,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"cmake installation in progress ...";
 	wget -qO- "https://cmake.org/files/v3.22/cmake-3.22.1-linux-x86_64.tar.gz" | sudo tar --strip-components=1 -xz -C /usr/local; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"cmake installation in progress ...";
-	
+	#web-archive
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
+	go get -u github.com/cheggaaa/pb/v3 && go install github.com/mrco24/web-archive@latest > /dev/null 2>&1 && ln -s ~/go/bin/web-archive /usr/local/bin/; 
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
 
 }
 
