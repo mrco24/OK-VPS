@@ -338,7 +338,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
 	cd /root/OK-VPS/tools && wget https://github.com/tomnomnom/hacks/archive/refs/heads/master.zip && unzip master.zip && cd hacks-master/kxss/ && go env -w GO111MODULE=auto && go build && cp kxss /usr/local/bin;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"kxss installation is done !"; echo "";
-	#Gxssgo build && cp kxss /usr/local/bin
+	#Gxssgo
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Gxss installation in progress ...";
 	go install github.com/KathanP19/Gxss@latest > /dev/null 2>&1 && ln -s ~/go/bin/Gxss /usr/local/bin/; 
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Gxss installation is done !"; echo "";
@@ -361,6 +361,10 @@ VULNS_SQLI () {
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${RED}"NoSQLMap installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/r0oth3x49/ghauri.git > /dev/null 2>&1 && cd ghauri && python3 -m pip install --upgrade -r requirements.txt && python3 -m pip install -e . > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"NoSQLMap installation is done !"; echo "";
+        #Jeeves
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Jeeves installation in progress ...";
+	go install github.com/ferreiraklet/Jeeves@latest > /dev/null 2>&1 && ln -s ~/go/bin/Jeeves /usr/local/bin/; 
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Jeeves installation is done !"; echo "";
 	
 }
 
