@@ -410,7 +410,7 @@ VULNS_SCANNER () {
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nikto installation is done !"; echo "";
         #Xray
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Xray installation in progress ...";
-	cd /root/OK-VPS/tools && mkdir xray && cd xray && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && mv xray_linux_amd64 xray && xray ws --basic-crawler app.krisp.ai --plugins xss,sqldet,xxe,ssrf,cmd-injection,path-traversal;
+	cd /root/OK-VPS/tools && mkdir xray && cd xray && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && mv xray_linux_amd64 xray && && wget https://github.com/mrco24/xray-config/raw/main/n.zip && unzip n.zip && cd n && cp -r *.yaml /root/OK-VPS/tools/xray;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Xray installation is done !"; echo "";
 }
 
