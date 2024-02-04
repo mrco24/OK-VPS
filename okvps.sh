@@ -205,7 +205,10 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
 	go get -u github.com/cheggaaa/pb/v3 && go install github.com/mrco24/web-archive@latest > /dev/null 2>&1 && ln -s ~/go/bin/web-archive /usr/local/bin/; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
-
+        #otx-url
+	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
+	go install github.com/tomnomnom/otx-url@latest > /dev/null 2>&1 && ln -s ~/go/bin/otx-url /usr/local/bin/; 
+	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
 }
 
 NETWORK_SCANNER () {
@@ -362,10 +365,13 @@ VULNS_SQLI () {
 	cd /root/OK-VPS/tools && git clone https://github.com/r0oth3x49/ghauri.git > /dev/null 2>&1 && cd ghauri && python3 -m pip install --upgrade -r requirements.txt && python3 -m pip install -e . > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - SQL Injection]" ${GREEN}"NoSQLMap installation is done !"; echo "";
         #Jeeves
-	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Jeeves installation in progress ...";
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${RED}"Jeeves installation in progress ...";
 	go install github.com/ferreiraklet/Jeeves@latest > /dev/null 2>&1 && ln -s ~/go/bin/Jeeves /usr/local/bin/; 
-	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Jeeves installation is done !"; echo "";
-	
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${GREEN}"Jeeves installation is done !"; echo "";
+	#time-sql
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${RED}"time-sql installation in progress ...";
+	go install github.com/mrco24/time-sql@latest > /dev/null 2>&1 && ln -s ~/go/bin/time-sql /usr/local/bin/; 
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${GREEN}"time-sql installation is done !"; echo "";
 }
 
 CMS_SCANNER () {
