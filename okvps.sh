@@ -564,7 +564,7 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
         #SploitScan
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"SploitScan installation in progress ...";
-	cd /root/OK-VPS/tools && https://github.com/xaitax/SploitScan.git > /dev/null 2>&1 && cd SploitScan > /dev/null 2>&1;
+	cd /root/OK-VPS/tools && git clone https://github.com/xaitax/SploitScan.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"SploitScan installation is done !"; echo "";
 }
 
