@@ -207,7 +207,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
         #otx-url
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
-	go install github.com/tomnomnom/otx-url@latest > /dev/null 2>&1 && ln -s ~/go/bin/otx-url /usr/local/bin/; 
+	go install github.com/mrco24/otx-url@latest > /dev/null 2>&1 && ln -s ~/go/bin/otx-url /usr/local/bin/; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
 }
 
@@ -275,6 +275,18 @@ LFI_TOOLS () {
 	echo -e ${BLUE}"[LFI TOOLS]" ${RED}"LFISuite installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/D35m0nd142/LFISuite.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[LFI TOOLS]" ${GREEN}"LFISuite installation is done !"; echo "";
+        #LFISuite
+	echo -e ${BLUE}"[LFI TOOLS]" ${RED}"LFISuite installation in progress ...";
+	go install github.com/mrco24/mrco24-lfi@latest > /dev/null 2>&1 && ln -s ~/go/bin/mrco24-lfi /usr/local/bin/;
+	echo -e ${BLUE}"[LFI TOOLS]" ${GREEN}"LFISuite installation is done !"; echo "";
+}
+
+Open_Redirect () {
+
+        #openredirect
+	echo -e ${BLUE}"[Open Redirect]" ${RED}"Open Redirect installation in progress ...";
+	go install github.com/mrco24/open-redirect@latest > /dev/null 2>&1 && ln -s ~/go/bin/open-redirect /usr/local/bin/;
+	echo -e ${BLUE}"[Open Redirect]" ${GREEN}"Open Redirect installation is done !"; echo "";
 }
 
 SSRF_TOOLS () {
@@ -372,6 +384,10 @@ VULNS_SQLI () {
 	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${RED}"time-sql installation in progress ...";
 	go install github.com/mrco24/time-sql@latest > /dev/null 2>&1 && ln -s ~/go/bin/time-sql /usr/local/bin/; 
 	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${GREEN}"time-sql installation is done !"; echo "";
+        #mrco24-error-sql
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${RED}"error-sql installation in progress ...";
+	go install github.com/mrco24/mrco24-error-sql@latest > /dev/null 2>&1 && ln -s ~/go/bin/mrco24-error-sql /usr/local/bin/; 
+	echo -e ${BLUE}"[VULNERABILITY - SQL]" ${GREEN}"error-sql installation is done !"; echo "";
 }
 
 CMS_SCANNER () {
