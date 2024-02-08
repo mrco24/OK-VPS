@@ -419,6 +419,7 @@ VULNS_SCANNER () {
 	cd /root/OK-VPS/tools && wget https://github.com/projectdiscovery/nuclei/releases/download/v2.9.7/nuclei_2.9.7_linux_amd64.zip && unzip nuclei_2.9.7_linux_amd64.zip && mv nuclei /usr/local/bin/;
 	cd /root/templates && git clone https://github.com/projectdiscovery/nuclei-templates.git > /dev/null 2>&1;
 	cd /root/templates && git clone https://github.com/projectdiscovery/fuzzing-templates.git > /dev/null 2>&1;
+        go install -v github.com/xm1k3/cent@latest && cent init > /dev/null 2>&1 && ln -s ~/go/bin/cent /usr/local/bin/;
 	echo -e ${BLUE}"[VULNERA BILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
