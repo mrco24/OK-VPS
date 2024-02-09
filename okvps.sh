@@ -86,7 +86,7 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"knockpy installation is done !"; echo "";
         #censys
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"Censys installation in progress ...";
-	cd /root/OK-VPS/tools && export CENSYS_API_ID=303b2554-31b0-4e2d-a036-c869f23bfb76 && export CENSYS_API_SECRET=sB8T2K8en7LW6GHOkKPOfEDVpdmaDj6t && cp .env.template .env && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
+	cd /root/OK-VPS/tools && export CENSYS_API_ID=303b2554-31b0-4e2d-a036-c869f23bfb76 && export CENSYS_API_SECRET=sB8T2K8en7LW6GHOkKPOfEDVpdmaDj6t && git clone https://github.com/christophetd/censys-subdomain-finder.git > /dev/null 2>&1 && cd censys-subdomain-finder && apt install python3.8-venv -y && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt; 
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${GREEN}"Censys installation is done !"; echo ""
         #quickcert
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"quickcert installation in progress ...";
@@ -419,7 +419,7 @@ VULNS_SCANNER () {
 	cd /root/OK-VPS/tools && wget https://github.com/projectdiscovery/nuclei/releases/download/v2.9.7/nuclei_2.9.7_linux_amd64.zip && unzip nuclei_2.9.7_linux_amd64.zip && mv nuclei /usr/local/bin/;
 	cd /root/templates && git clone https://github.com/projectdiscovery/nuclei-templates.git > /dev/null 2>&1;
 	cd /root/templates && git clone https://github.com/projectdiscovery/fuzzing-templates.git > /dev/null 2>&1;
-        go install -v github.com/xm1k3/cent@latest && cent init > /dev/null 2>&1 && ln -s ~/go/bin/cent /usr/local/bin/;
+        go install -v github.com/xm1k3/cent@latest > /dev/null 2>&1 && ln -s ~/go/bin/cent /usr/local/bin/ && cent init;
 	echo -e ${BLUE}"[VULNERA BILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
 	#Jaeles
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
