@@ -361,6 +361,10 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"findom-xss installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/dwisiswant0/findom-xss.git > /dev/null 2>&1 && cd findom-xss && chmod +x findom-xss.sh && rm -r LinkFinder && git clone https://github.com/GerbenJavado/LinkFinder.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"findom-xss installation is done !"; echo "";
+        #Knoxnl
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Knoxnl installation in progress ...";
+	pip install git+https://github.com/xnl-h4ck3r/knoxnl.git;
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Knoxnl installation is done !"; echo "";
 }
 
 VULNS_SQLI () {
