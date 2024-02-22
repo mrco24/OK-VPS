@@ -238,7 +238,7 @@ HTTP_PARAMETER () {
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"Arjun installation is done !"; echo "";
 	#x8
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${RED}"x8 installation in progress ...";
-	cd /root/OK-VPS/tools && wget https://github.com/mrco24/x8/raw/main/x8 > /dev/null 2>&1 && chmod x8 && mv x8 /usr/local/bin/x8;
+	cd /root/OK-VPS/tools && wget https://github.com/mrco24/x8/raw/main/x8 && chmod +x x8 && mv x8 /usr/local/bin/x8;
 	echo -e ${BLUE}"[HTTP PARAMETER DISCOVERY]" ${GREEN}"x8 installation is done !"; echo "";
 }
 
