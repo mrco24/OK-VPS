@@ -533,7 +533,7 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"tok installation is done !"; echo "";
         #tok
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"tok installation in progress ...";
-	go get -u github.com/mrco24/tok > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
+	go install github.com/mrco24/tok@latest > /dev/null 2>&1 && ln -s ~/go/bin/tok /usr/local/bin/;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"tok installation is done !"; echo "";
 	#installallurls
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"installallurls installation in progress ...";
