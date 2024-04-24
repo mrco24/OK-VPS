@@ -351,7 +351,7 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"XSS_VIBES installation is done !"; echo "";
 	#kxss
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"kxss installation in progress ...";
-	cd /root/OK-VPS/tools && wget https://github.com/tomnomnom/hacks/archive/refs/heads/master.zip && unzip master.zip && cd hacks-master/kxss/ && go env -w GO111MODULE=auto && go build && cp kxss /usr/local/bin;
+	go install github.com/Emoe/kxss@late > /dev/null 2>&1 && ln -s ~/go/bin/kxss /usr/local/bin/;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"kxss installation is done !"; echo "";
 	#Gxssgo
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Gxss installation in progress ...";
