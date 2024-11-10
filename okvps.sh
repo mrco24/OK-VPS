@@ -81,6 +81,10 @@ SUBDOMAINS_ENUMERATION () {
 	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Galer installation in progress ...";
 	GO111MODULE=on go install -v github.com/dwisiswant0/galer@latest > /dev/null 2>&1 && ln -s ~/go/bin/galer /usr/local/bin/;
 	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Galer installation is done !"; echo "";
+        #Haktrails
+	echo -e ${BLUE}"[DNS RESOLVER]" ${RED}"Haktrails installation in progress ...";
+	GO111MODULE=on go install -v github.com/hakluke/haktrails@latest > /dev/null 2>&1 && ln -s ~/go/bin/haktrails /usr/local/bin/ && cd .config && mkdir haktools && cd haktools && touch haktrails-config.yml;
+	echo -e ${BLUE}"[DNS RESOLVER]" ${GREEN}"Haktrails installation is done !"; echo "";
         #knockpy
 	echo -e ${BLUE}"[SUBDOMAINS ENUMERATION]" ${RED}"knockpy installation in progress ...";
         cd /root/OK-VPS/tools/file && wget https://github.com/guelfoweb/knock/archive/refs/tags/5.4.0.zip && unzip 5.4.0.zip && cd knock-5.4.0 && python3 setup.py install && knockpy --set apikey-virustotal=fbbb048214f36feb32fcf7e8aa262c26b2dfe5051d02de7d85da6b3acbbed778;
