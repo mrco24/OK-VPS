@@ -200,7 +200,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
 	#freq
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
-	cd /root/Tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
+	cd /root/OK-VPS/tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
         echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
 	#cmake
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"cmake installation in progress ...";
