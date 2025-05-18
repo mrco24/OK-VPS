@@ -349,6 +349,10 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Dalfox installation in progress ...";
 	GO111MODULE=on go install -v github.com/hahwul/dalfox/v2@latest > /dev/null 2>&1 && ln -s ~/go/bin/dalfox /usr/local/bin/;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Dalfox installation is done !"; echo "";
+        #Cookieless
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Cookieless installation in progress ...";
+	GO111MODULE=on go install -v go install github.com/RealLinkers/cookieless@latest > /dev/null 2>&1 && ln -s ~/go/bin/cookieless /usr/local/bin/;
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Cookieless installation is done !"; echo "";
 	#XSStrike
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"XSStrike installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/s0md3v/XSStrike > /dev/null 2>&1 && cd XSStrike && pip3 install -r requirements.txt > /dev/null 2>&1;
