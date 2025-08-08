@@ -220,6 +220,42 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
 }
 
+VULNS_SCANNER () {
+	#Nuclei + nuclei templates
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei installation in progress ...";
+	#cd /root/OK-VPS/tools && wget https://github.com/projectdiscovery/nuclei/releases/download/v2.9.7/nuclei_2.9.7_linux_amd64.zip && unzip nuclei_2.9.7_linux_amd64.zip && mv nuclei /usr/local/bin/;
+	go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest > /dev/null 2>&1 && ln -s ~/go/bin/nuclei /usr/local/bin/;
+    go install -v github.com/xm1k3/cent@latest > /dev/null 2>&1 && ln -s ~/go/bin/cent /usr/local/bin/ && cent init;
+	echo -e ${BLUE}"[VULNERA BILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
+	#Jaeles
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
+	cd /root/OK-VPS/tools/file && wget https://github.com/jaeles-project/jaeles/releases/download/beta-v0.17/jaeles-v0.17-linux.zip > /dev/null 2>&1 && unzip jaeles-v0.17-linux.zip > /dev/null 2>&1 && mv jaeles /usr/local/bin/;
+	cd /root/templates && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
+	cd /root/templates && git clone https://github.com/ghsec/ghsec-jaeles-signatures > /dev/null 2>&1;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
+	#Nikto
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
+	apt-install install -y nikto > /dev/null 2>&1;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nikto installation is done !"; echo "";
+    #Xray
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Xray installation in progress ...";
+	cd /root/OK-VPS/tools && mkdir xray && cd xray && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && mv xray_linux_amd64 xray && wget https://github.com/mrco24/xray-config/raw/main/n.zip && unzip n.zip && cd n && cp -r *.yaml /root/OK-VPS/tools/xray;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Xray installation is done !"; echo "";
+    #Nuclei-Clone
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei-Clone installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/mrco24/nuclei-templates-clone.git && cd nuclei-templates-clone && chmod +x c.sh;
+    ./c.sh -f repo.txt
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei-Clone installation is done !"; echo "";
+    #Afrog
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Afrog installation in progress ...";
+	go install -v github.com/zan8in/afrog/v2/cmd/afrog@latest > /dev/null 2>&1 && ln -s ~/go/bin/afrog /usr/local/bin/;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Afrog installation is done !"; echo "";
+    #POC-bomber
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"POC-bomber installation in progress ..."; 
+        cd /root/OK-VPS/tools && git clone https://github.com/tr0uble-mAker/POC-bomber.git && cd POC-bomber && pip install -r requirements.txt;
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"POC-bomber installation is done !"; echo "";
+}
+
 NETWORK_SCANNER () {
 	#Nmap
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Nmap installation in progress ...";
@@ -419,7 +455,7 @@ CMS_SCANNER () {
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"Droopescan installation in progress ...";
 	pip3 install droopescan > /dev/null 2>&1;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"Droopescan installation is done !"; echo "";
-        #Nrich
+    #Nrich
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"Droopescan installation in progress ...";
 	wget https://gitlab.com/api/v4/projects/33695681/packages/generic/nrich/latest/nrich_latest_amd64.deb && dpkg -i nrich_latest_amd64.deb > /dev/null 2>&1;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"Droopescan installation is done !"; echo "";
@@ -431,39 +467,6 @@ CMS_SCANNER () {
 	echo -e ${BLUE}"[CMS SCANNER]" ${RED}"WPScan  installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/Ekultek/WhatWaf.git > /dev/null 2>&1 && cd WhatWaf && cp -r /root/tools/WhatWeb/WhatWaf/whatwaf /usr/local/bin;
 	echo -e ${BLUE}"[CMS SCANNER]" ${GREEN}"WPScan installation is done !"; echo "";
-}
-
-VULNS_SCANNER () {
-	#Nuclei + nuclei templates
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei installation in progress ...";
-	#cd /root/OK-VPS/tools && wget https://github.com/projectdiscovery/nuclei/releases/download/v2.9.7/nuclei_2.9.7_linux_amd64.zip && unzip nuclei_2.9.7_linux_amd64.zip && mv nuclei /usr/local/bin/;
-	go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest > /dev/null 2>&1 && ln -s ~/go/bin/nuclei /usr/local/bin/;
-        cd /root/templates && git clone https://github.com/projectdiscovery/nuclei-templates.git > /dev/null 2>&1;
-	cd /root/templates && git clone https://github.com/projectdiscovery/fuzzing-templates.git > /dev/null 2>&1;
-        go install -v github.com/xm1k3/cent@latest > /dev/null 2>&1 && ln -s ~/go/bin/cent /usr/local/bin/ && cent init;
-	echo -e ${BLUE}"[VULNERA BILITY SCANNER]" ${GREEN}"Nuclei installation is done !"; echo "";
-	#Jaeles
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Jaeles installation in progress ...";
-	cd /root/OK-VPS/tools/file && wget https://github.com/jaeles-project/jaeles/releases/download/beta-v0.17/jaeles-v0.17-linux.zip > /dev/null 2>&1 && unzip jaeles-v0.17-linux.zip > /dev/null 2>&1 && mv jaeles /usr/local/bin/;
-	cd /root/templates && git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1;
-	cd /root/templates && git clone https://github.com/ghsec/ghsec-jaeles-signatures > /dev/null 2>&1;
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Jaeles installation is done !"; echo "";
-	#Nikto
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nikto installation in progress ...";
-	apt-install install -y nikto > /dev/null 2>&1;
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nikto installation is done !"; echo "";
-        #Xray
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Xray installation in progress ...";
-	cd /root/OK-VPS/tools && mkdir xray && cd xray && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && mv xray_linux_amd64 xray && wget https://github.com/mrco24/xray-config/raw/main/n.zip && unzip n.zip && cd n && cp -r *.yaml /root/OK-VPS/tools/xray;
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Xray installation is done !"; echo "";
-        #Afrog
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Afrog installation in progress ...";
-	go install -v github.com/zan8in/afrog/v2/cmd/afrog@latest > /dev/null 2>&1 && ln -s ~/go/bin/afrog /usr/local/bin/;
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Afrog installation is done !"; echo "";
-        #POC-bomber
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"POC-bomber installation in progress ..."; 
-        cd /root/OK-VPS/tools && git clone https://github.com/tr0uble-mAker/POC-bomber.git && cd POC-bomber && pip install -r requirements.txt;
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"POC-bomber installation is done !"; echo "";
 }
 
 JS_HUNTING () {
