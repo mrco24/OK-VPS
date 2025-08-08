@@ -183,7 +183,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"Parameters installation in progress ...";
 	go install github.com/mrco24/parameters@latest > /dev/null 2>&1 && ln -s ~/go/bin/parameters /usr/local/bin/;
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"Parameters installation is done !"; echo "";
-        #xnLinkFinder
+    #xnLinkFinder
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"xnLinkFinder installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/xnl-h4ck3r/xnLinkFinder.git && cd xnLinkFinder && python setup.py install > /dev/null 2>&1;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"xnLinkFinder installation is done !" ${RESTORE}; echo "";
@@ -193,7 +193,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF installation in progress ...";
 	#GF_P
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
-        cd &&  mkdir -p .gf && cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && wget https://raw.githubusercontent.com/mrco24/Patterns/main/my-lfi.json && cp *.json $HOME/.gf;	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
+    cd &&  mkdir -p .gf && cd /root/OK-VPS/tools/file && git clone https://github.com/tomnomnom/gf && cd /root/OK-VPS/tools/file/gf/examples && cp *.json $HOME/.gf && cd /root/OK-VPS/tools/file && git clone https://github.com/1ndianl33t/Gf-Patterns && cd /root/OK-VPS/tools/file/Gf-Patterns && wget https://raw.githubusercontent.com/mrco24/Patterns/main/my-lfi.json && cp *.json $HOME/.gf;	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"GF_P installation in progress ...";
 	#uro
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"GF_P installation in progress ...";
 	cd /root/OK-VPS/tools/file && wget https://github.com/s0md3v/uro/archive/refs/tags/1.0.0-beta.zip && unzip 1.0.0-beta.zip && cd uro-1.0.0-beta && python3 setup.py install && cp -r  uro /usr/bin; 
@@ -201,7 +201,7 @@ WEB_CRAWLING () {
 	#freq
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/takshal/freq.git && cd freq && mv main.go freq.go && go build freq.go && cp freq /usr/bin; 
-        echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
+    echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
 	#freq
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	cd /root/OK-VPS/tools && wget https://github.com/chainreactors/urlfounder/releases/download/v0.0.1/urlfounder_0.0.1_linux_amd64 && chmod +x urlfounder_0.0.1_linux_amd64 && mv urlfounder_0.0.1_linux_amd64 urlfounder && cp urlfounder /usr/local/bin; 
@@ -214,7 +214,7 @@ WEB_CRAWLING () {
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
 	go get -u github.com/cheggaaa/pb/v3 && go install github.com/mrco24/web-archive@latest > /dev/null 2>&1 && ln -s ~/go/bin/web-archive /usr/local/bin/; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
-        #otx-url
+    #otx-url
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"web-archive installation in progress ...";
 	go install github.com/mrco24/otx-url@latest > /dev/null 2>&1 && ln -s ~/go/bin/otx-url /usr/local/bin/; 
 	echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"web-archive installation in progress ...";
@@ -245,6 +245,7 @@ VULNS_SCANNER () {
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei-Clone installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/mrco24/nuclei-templates-clone.git && cd nuclei-templates-clone && chmod +x c.sh;
     ./c.sh -f repo.txt
+	./c.sh -d
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei-Clone installation is done !"; echo "";
     #Afrog
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Afrog installation in progress ...";
