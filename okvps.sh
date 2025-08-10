@@ -241,12 +241,6 @@ VULNS_SCANNER () {
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Xray installation in progress ...";
 	cd /root/OK-VPS/tools && mkdir xray && cd xray && wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip && unzip xray_linux_amd64.zip && mv xray_linux_amd64 xray && wget https://github.com/mrco24/xray-config/raw/main/n.zip && unzip n.zip && cd n && cp -r *.yaml /root/OK-VPS/tools/xray;
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Xray installation is done !"; echo "";
-    #Nuclei-Clone
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei-Clone installation in progress ...";
-	cd /root/OK-VPS/tools && git clone https://github.com/mrco24/nuclei-templates-clone.git && cd nuclei-templates-clone && chmod +x c.sh;
-    ./c.sh -f repo.txt
-	./c.sh -d
-	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei-Clone installation is done !"; echo "";
     #Afrog
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Afrog installation in progress ...";
 	go install -v github.com/zan8in/afrog/v2/cmd/afrog@latest > /dev/null 2>&1 && ln -s ~/go/bin/afrog /usr/local/bin/;
@@ -612,10 +606,16 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Uro installation in progress ...";
 	pip3 install uro > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
-        #SploitScan
+    #SploitScan
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"SploitScan installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/xaitax/SploitScan.git > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"SploitScan installation is done !"; echo "";
+    #Nuclei-Clone
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei-Clone installation in progress ...";
+	cd /root/OK-VPS/tools && git clone https://github.com/mrco24/nuclei-templates-clone.git && cd nuclei-templates-clone && chmod +x c.sh;
+    ./c.sh -f repo.txt
+	./c.sh -d
+	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei-Clone installation is done !"; echo "";
 }
 
 SUBDOMAINS_ENUMERATION && DNS_RESOLVER && VISUAL_tools && HTTP_PROBE && WEB_CRAWLING && NETWORK_SCANNER && HTTP_PARAMETER && FUZZING_TOOLS && LFI_TOOLS && SSRF_TOOLS && SSTI_TOOLS && API_TOOLS && WORDLISTS && VULNS_XSS && VULNS_SQLI && CMS_SCANNER && VULNS_SCANNER && JS_HUNTING && GIT_HUNTING  && SENSITIVE_FINDING && USEFUL_TOOLS;
