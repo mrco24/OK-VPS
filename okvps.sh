@@ -205,7 +205,7 @@ WEB_CRAWLING () {
 	#freq
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"freq installation in progress ...";
 	cd /root/OK-VPS/tools && wget https://github.com/chainreactors/urlfounder/releases/download/v0.0.1/urlfounder_0.0.1_linux_amd64 && chmod +x urlfounder_0.0.1_linux_amd64 && mv urlfounder_0.0.1_linux_amd64 urlfounder && cp urlfounder /usr/local/bin; 
-        echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
+    echo -e ${BLUE}"[WEB CRAWLING]" ${GREEN}"freq installation in progress ...";
 	#cmake
 	echo -e ${BLUE}"[WEB CRAWLING]" ${RED}"cmake installation in progress ...";
 	wget -qO- "https://cmake.org/files/v3.22/cmake-3.22.1-linux-x86_64.tar.gz" | sudo tar --strip-components=1 -xz -C /usr/local; 
@@ -262,7 +262,7 @@ NETWORK_SCANNER () {
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Masscan installation is done !"; echo "";
 	#naabu
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"Naabu installation in progress ...";
-	GO111MODULE=on go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest > /dev/null 2>&1 && ln -s ~/go/bin/naabu /usr/local/bin/;
+    go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest > /dev/null 2>&1 && ln -s ~/go/bin/naabu /usr/local/bin/;
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${GREEN}"Naabu installation is done !"; echo "";
         #unimap
 	echo -e ${BLUE}"[NETWORK SCANNER]" ${RED}"unimap installation in progress ...";
