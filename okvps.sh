@@ -613,8 +613,9 @@ USEFUL_TOOLS () {
     #Nuclei-Clone
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${RED}"Nuclei-Clone installation in progress ...";
 	cd /root/OK-VPS/tools && git clone https://github.com/mrco24/nuclei-templates-clone.git && cd nuclei-templates-clone && chmod +x c.sh;
-    ./c.sh -f repo.txt
-	./c.sh -d
+    cd
+	/root/OK-VPS/tools/nuclei-templates-clone/./c.sh -f repo.txt
+	/root/OK-VPS/tools/nuclei-templates-clone/./c.sh -d
 	echo -e ${BLUE}"[VULNERABILITY SCANNER]" ${GREEN}"Nuclei-Clone installation is done !"; echo "";
 }
 
