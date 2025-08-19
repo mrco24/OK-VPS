@@ -604,7 +604,7 @@ USEFUL_TOOLS () {
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Tmux installation is done !"; echo "";
 	#Uro
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"Uro installation in progress ...";
-	pip3 install uro > /dev/null 2>&1;
+	pip3 install uro && apt-get install pipx && pipx install uro --force && echo $PATH && echo 'export PATH=$PATH:/root/.local/bin' >> ~/.bashrc && source ~/.bashrc && echo $PATH  > /dev/null 2>&1;
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${GREEN}"Uro installation is done !" ${RESTORE}; echo "";
     #SploitScan
 	echo -e ${BLUE}"[USEFUL TOOLS]" ${RED}"SploitScan installation in progress ...";
