@@ -408,10 +408,10 @@ VULNS_XSS () {
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Knoxnl installation in progress ...";
 	pip install git+https://github.com/xnl-h4ck3r/knoxnl.git;
 	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Knoxnl installation is done !"; echo "";
-        #Bxss
-	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Knoxnl installation in progress ...";
+    #Bxss
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${RED}"Bxss installation in progress ...";
 	go install github.com/ethicalhackingplayground/bxss@latest > /dev/null 2>&1 && ln -s ~/go/bin/bxss /usr/local/bin/;
-	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Knoxnl installation is done !"; echo "";
+	echo -e ${BLUE}"[VULNERABILITY - XSS]" ${GREEN}"Bxss installation is done !"; echo "";
 }
 
 VULNS_SQLI () {
