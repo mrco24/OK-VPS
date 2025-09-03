@@ -526,7 +526,7 @@ SENSITIVE_FINDING() {
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Gau-Expose installation is done !" ${RESTORE}; echo "";
     #Mantra
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${RED}"Mantra installation in progress ...";
-	go install github.com/MrEmpy/mantra@latest > /dev/null 2>&1 && ln -s ~/go/bin/mantra /usr/local/bin/;
+	go install github.com/Brosck/mantra@latest > /dev/null 2>&1 && ln -s ~/go/bin/mantra /usr/local/bin/;
 	echo -e ${BLUE}"[SENSITIVE FINDING TOOLS]" ${GREEN}"Mantra installation is done !" ${RESTORE}; echo "";
 }
 
