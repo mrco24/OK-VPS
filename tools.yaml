@@ -1,0 +1,530 @@
+# Bug Bounty Tools Manifest
+# This file defines all tools to be installed, their installation methods, and verification commands
+
+tools:
+  # ============================================================
+  # SUBDOMAINS ENUMERATION
+  # ============================================================
+
+  - name: subfinder
+    category: subdomain-enumeration
+    description: "Fast passive subdomain enumeration tool"
+    repo: "github.com/projectdiscovery/subfinder/v2/cmd/subfinder"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "subfinder -version"
+    priority: high
+    compat_notes: "Stable tool, rarely changes CLI"
+
+  - name: assetfinder
+    category: subdomain-enumeration
+    description: "Find domains and subdomains related to a given domain"
+    repo: "github.com/tomnomnom/assetfinder"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/assetfinder@latest"
+    verify_command: "assetfinder -h"
+    priority: high
+
+  - name: findomain
+    category: subdomain-enumeration
+    description: "The fastest and cross-platform subdomain enumerator"
+    repo: "github.com/findomain/findomain"
+    install_methods:
+      - type: release_binary
+        arch_map:
+          amd64: "findomain-linux-i386.zip"
+          x86_64: "findomain-linux-i386.zip"
+        extract: true
+        binary_name: "findomain"
+    verify_command: "findomain --version"
+    priority: high
+
+  - name: amass
+    category: subdomain-enumeration
+    description: "In-depth DNS enumeration and network mapping"
+    repo: "github.com/owasp-amass/amass"
+    install_methods:
+      - type: go_install
+        command: "github.com/owasp-amass/amass/v4/...@master"
+    verify_command: "amass -version"
+    priority: high
+    config_files:
+      - path: ".config/amass/config.yaml"
+        url: "https://raw.githubusercontent.com/owasp-amass/amass/master/examples/config.yaml"
+      - path: ".config/amass/datasources.yaml"
+        url: "https://raw.githubusercontent.com/owasp-amass/amass/master/examples/datasources.yaml"
+
+  - name: chaos
+    category: subdomain-enumeration
+    description: "Go client to communicate with Chaos dataset API"
+    repo: "github.com/projectdiscovery/chaos-client"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/chaos-client/cmd/chaos@latest"
+    verify_command: "chaos -version"
+    priority: medium
+
+  - name: github-subdomains
+    category: subdomain-enumeration
+    description: "Find subdomains on GitHub"
+    repo: "github.com/gwen001/github-subdomains"
+    install_methods:
+      - type: go_install
+        command: "github.com/gwen001/github-subdomains@latest"
+    verify_command: "github-subdomains -h"
+    priority: medium
+
+  - name: crobat
+    category: subdomain-enumeration
+    description: "Rapid7 Sonar API client"
+    repo: "github.com/cgboal/sonarsearch"
+    install_methods:
+      - type: go_install
+        command: "github.com/cgboal/sonarsearch/cmd/crobat@latest"
+    verify_command: "crobat -h"
+    priority: medium
+
+  - name: gotator
+    category: subdomain-enumeration
+    description: "Tool for generating DNS permutations"
+    repo: "github.com/Josue87/gotator"
+    install_methods:
+      - type: go_install
+        command: "github.com/Josue87/gotator@latest"
+    verify_command: "gotator -h"
+    priority: low
+
+  # ============================================================
+  # DNS RESOLVER
+  # ============================================================
+
+  - name: dnsx
+    category: dns-resolver
+    description: "Fast and multi-purpose DNS toolkit"
+    repo: "github.com/projectdiscovery/dnsx"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/dnsx/cmd/dnsx@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "dnsx -version"
+    priority: high
+
+  - name: massdns
+    category: dns-resolver
+    description: "High-performance DNS stub resolver"
+    repo: "github.com/blechschmidt/massdns"
+    install_methods:
+      - type: git_clone_build
+        commands:
+          - "make"
+          - "make install PREFIX=${INSTALL_DIR}"
+    verify_command: "massdns --help"
+    priority: high
+
+  - name: puredns
+    category: dns-resolver
+    description: "Fast domain resolver and subdomain bruteforcing"
+    repo: "github.com/d3mondev/puredns"
+    install_methods:
+      - type: go_install
+        command: "github.com/d3mondev/puredns/v2@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "puredns version"
+    priority: high
+
+  - name: shuffledns
+    category: dns-resolver
+    description: "Wrapper around massdns for subdomain enumeration"
+    repo: "github.com/projectdiscovery/shuffledns"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest"
+    verify_command: "shuffledns -version"
+    priority: medium
+
+  - name: mapcidr
+    category: dns-resolver
+    description: "Utility to work with CIDR ranges"
+    repo: "github.com/projectdiscovery/mapcidr"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest"
+    verify_command: "mapcidr -version"
+    priority: low
+
+  # ============================================================
+  # HTTP PROBE
+  # ============================================================
+
+  - name: httpx
+    category: http-probe
+    description: "Fast and multi-purpose HTTP toolkit"
+    repo: "github.com/projectdiscovery/httpx"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/httpx/cmd/httpx@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "httpx -version"
+    priority: high
+    compat_notes: "Some flags have changed between v1 and v2"
+
+  - name: httprobe
+    category: http-probe
+    description: "Take a list of domains and probe for working HTTP/HTTPS servers"
+    repo: "github.com/tomnomnom/httprobe"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/httprobe@latest"
+    verify_command: "httprobe -h"
+    priority: medium
+
+  # ============================================================
+  # WEB CRAWLING
+  # ============================================================
+
+  - name: katana
+    category: web-crawling
+    description: "Next-generation crawling and spidering framework"
+    repo: "github.com/projectdiscovery/katana"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/katana/cmd/katana@latest"
+    verify_command: "katana -version"
+    priority: high
+
+  - name: gospider
+    category: web-crawling
+    description: "Fast web spider written in Go"
+    repo: "github.com/jaeles-project/gospider"
+    install_methods:
+      - type: go_install
+        command: "github.com/jaeles-project/gospider@latest"
+    verify_command: "gospider -h"
+    priority: medium
+
+  - name: hakrawler
+    category: web-crawling
+    description: "Simple, fast web crawler designed for easy, quick discovery"
+    repo: "github.com/hakluke/hakrawler"
+    install_methods:
+      - type: go_install
+        command: "github.com/hakluke/hakrawler@latest"
+    verify_command: "hakrawler -h"
+    priority: medium
+
+  - name: waybackurls
+    category: web-crawling
+    description: "Fetch all the URLs that the Wayback Machine knows"
+    repo: "github.com/tomnomnom/waybackurls"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/waybackurls@latest"
+    verify_command: "waybackurls -h"
+    priority: high
+
+  - name: gau
+    category: web-crawling
+    description: "Fetch known URLs from various sources"
+    repo: "github.com/lc/gau"
+    install_methods:
+      - type: go_install
+        command: "github.com/lc/gau/v2/cmd/gau@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "gau --version"
+    priority: high
+
+  - name: gf
+    category: web-crawling
+    description: "Wrapper around grep to avoid typing common patterns"
+    repo: "github.com/tomnomnom/gf"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/gf@latest"
+    verify_command: "gf -h"
+    priority: medium
+    post_install:
+      - description: "Download GF patterns"
+        commands:
+          - "mkdir -p ~/.gf"
+          - "git clone --quiet https://github.com/tomnomnom/gf /tmp/gf-repo && cp /tmp/gf-repo/examples/*.json ~/.gf/ && rm -rf /tmp/gf-repo"
+          - "git clone --quiet https://github.com/1ndianl33t/Gf-Patterns /tmp/gf-patterns && cp /tmp/gf-patterns/*.json ~/.gf/ && rm -rf /tmp/gf-patterns"
+
+  # ============================================================
+  # NETWORK SCANNER
+  # ============================================================
+
+  - name: nmap
+    category: network-scanner
+    description: "Network exploration tool and security scanner"
+    install_methods:
+      - type: package_manager
+        packages:
+          apt: "nmap libpcap-dev"
+          dnf: "nmap libpcap-devel"
+          yum: "nmap libpcap-devel"
+          pacman: "nmap libpcap"
+    verify_command: "nmap --version"
+    priority: high
+
+  - name: masscan
+    category: network-scanner
+    description: "TCP port scanner, spews SYN packets asynchronously"
+    repo: "github.com/robertdavidgraham/masscan"
+    install_methods:
+      - type: git_clone_build
+        commands:
+          - "make"
+          - "make install PREFIX=${INSTALL_DIR}"
+    verify_command: "masscan --version"
+    priority: high
+
+  - name: naabu
+    category: network-scanner
+    description: "Fast port scanner written in go with focus on reliability"
+    repo: "github.com/projectdiscovery/naabu"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/naabu/v2/cmd/naabu@latest"
+    verify_command: "naabu -version"
+    priority: high
+    requires_sudo: true
+    compat_notes: "Requires libpcap-dev"
+
+  # ============================================================
+  # FUZZING TOOLS
+  # ============================================================
+
+  - name: ffuf
+    category: fuzzing
+    description: "Fast web fuzzer written in Go"
+    repo: "github.com/ffuf/ffuf"
+    install_methods:
+      - type: go_install
+        command: "github.com/ffuf/ffuf/v2@latest"
+      - type: package_manager
+        packages:
+          apt: "ffuf"
+    verify_command: "ffuf -V"
+    priority: high
+    compat_notes: "Flag changes between versions - -w vs --wordlist"
+
+  - name: gobuster
+    category: fuzzing
+    description: "Directory/File, DNS and VHost busting tool"
+    repo: "github.com/OJ/gobuster"
+    install_methods:
+      - type: go_install
+        command: "github.com/OJ/gobuster/v3@latest"
+    verify_command: "gobuster version"
+    priority: high
+
+  - name: feroxbuster
+    category: fuzzing
+    description: "Fast, simple, recursive content discovery tool"
+    repo: "github.com/epi052/feroxbuster"
+    install_methods:
+      - type: release_binary
+        url_pattern: "https://github.com/epi052/feroxbuster/releases/latest/download/x86_64-linux-feroxbuster.zip"
+        extract: true
+        binary_name: "feroxbuster"
+      - type: package_manager
+        packages:
+          apt: "feroxbuster"
+    verify_command: "feroxbuster --version"
+    priority: high
+    compat_notes: "Modern tool, stable CLI"
+
+  # ============================================================
+  # VULNERABILITY SCANNERS
+  # ============================================================
+
+  - name: nuclei
+    category: vuln-scanner
+    description: "Fast and customizable vulnerability scanner"
+    repo: "github.com/projectdiscovery/nuclei"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest"
+    verify_command: "nuclei -version"
+    priority: high
+    post_install:
+      - description: "Update nuclei templates"
+        commands:
+          - "nuclei -update-templates -silent || true"
+    compat_notes: "Template update flag changed from -update-templates to -ut in v3"
+    shim_needed: true
+
+  - name: sqlmap
+    category: vuln-scanner
+    description: "Automatic SQL injection and database takeover tool"
+    install_methods:
+      - type: package_manager
+        packages:
+          apt: "sqlmap"
+          dnf: "sqlmap"
+          yum: "sqlmap"
+      - type: git_clone
+        post_clone:
+          - "chmod +x sqlmap.py"
+          - "ln -sf ${INSTALL_DIR}/tools/sqlmap/sqlmap.py ${INSTALL_DIR}/bin/sqlmap"
+    verify_command: "sqlmap --version"
+    priority: high
+
+  # ============================================================
+  # XSS TOOLS
+  # ============================================================
+
+  - name: dalfox
+    category: xss
+    description: "Parameter analysis and XSS scanner"
+    repo: "github.com/hahwul/dalfox"
+    install_methods:
+      - type: go_install
+        command: "github.com/hahwul/dalfox/v2@latest"
+        env:
+          GO111MODULE: "on"
+    verify_command: "dalfox version"
+    priority: high
+
+  - name: kxss
+    category: xss
+    description: "Tool to find XSS vulnerabilities in a web application"
+    repo: "github.com/Emoe/kxss"
+    install_methods:
+      - type: go_install
+        command: "github.com/Emoe/kxss@latest"
+    verify_command: "kxss -h"
+    priority: medium
+
+  - name: gxss
+    category: xss
+    description: "Tool to find XSS vulnerabilities"
+    repo: "github.com/KathanP19/Gxss"
+    install_methods:
+      - type: go_install
+        command: "github.com/KathanP19/Gxss@latest"
+    verify_command: "Gxss -h"
+    priority: low
+
+  # ============================================================
+  # PARAMETER DISCOVERY
+  # ============================================================
+
+  - name: arjun
+    category: parameter-discovery
+    description: "HTTP parameter discovery suite"
+    install_methods:
+      - type: pip_install
+        package: "arjun"
+    verify_command: "arjun -h"
+    priority: high
+
+  - name: x8
+    category: parameter-discovery
+    description: "Hidden parameters discovery suite"
+    repo: "github.com/Sh1Yo/x8"
+    install_methods:
+      - type: release_binary
+        url_pattern: "https://github.com/Sh1Yo/x8/releases/latest/download/x8-linux"
+        binary_name: "x8"
+    verify_command: "x8 --version"
+    priority: medium
+
+  # ============================================================
+  # USEFUL TOOLS
+  # ============================================================
+
+  - name: anew
+    category: utility
+    description: "Tool for adding new lines to files, skipping duplicates"
+    repo: "github.com/tomnomnom/anew"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/anew@latest"
+    verify_command: "anew -h"
+    priority: high
+
+  - name: unfurl
+    category: utility
+    description: "Pull out bits of URLs provided on stdin"
+    repo: "github.com/tomnomnom/unfurl"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/unfurl@latest"
+    verify_command: "unfurl -h"
+    priority: medium
+
+  - name: qsreplace
+    category: utility
+    description: "Accept URLs on stdin, replace query string values"
+    repo: "github.com/tomnomnom/qsreplace"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/qsreplace@latest"
+    verify_command: "qsreplace -h"
+    priority: medium
+
+  - name: gron
+    category: utility
+    description: "Make JSON greppable"
+    repo: "github.com/tomnomnom/gron"
+    install_methods:
+      - type: go_install
+        command: "github.com/tomnomnom/gron@latest"
+    verify_command: "gron --version"
+    priority: low
+
+  - name: jq
+    category: utility
+    description: "Lightweight and flexible command-line JSON processor"
+    install_methods:
+      - type: package_manager
+        packages:
+          apt: "jq"
+          dnf: "jq"
+          yum: "jq"
+          pacman: "jq"
+    verify_command: "jq --version"
+    priority: high
+
+  - name: uro
+    category: utility
+    description: "Declutter URL lists for crawling/pentesting"
+    install_methods:
+      - type: pip_install
+        package: "uro"
+    verify_command: "uro --help"
+    priority: medium
+
+  - name: notify
+    category: utility
+    description: "Stream the output of several tools and publish it to multiple platforms"
+    repo: "github.com/projectdiscovery/notify"
+    install_methods:
+      - type: go_install
+        command: "github.com/projectdiscovery/notify/cmd/notify@latest"
+    verify_command: "notify -version"
+    priority: low
+
+  # ============================================================
+  # WORDLISTS
+  # ============================================================
+
+  - name: seclists
+    category: wordlist
+    description: "Collection of multiple types of lists used during security assessments"
+    repo: "github.com/danielmiessler/SecLists"
+    install_methods:
+      - type: git_clone
+        shallow: true
+    verify_command: "test -d ${INSTALL_DIR}/wordlists/SecLists"
+    priority: high
+    install_path: "wordlists/SecLists"
