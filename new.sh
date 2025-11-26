@@ -35,7 +35,7 @@ log_fail() {
     echo "" # Add a newline for clean output separation
 }
 
-# --- Failure Display Function (Updated for -f) ---
+# --- Failure Display Function (for -f) ---
 display_failures() {
     # Check if the log file exists and is not empty
     if [ ! -s "$FAILED_TOOLS_LOG" ]; then
@@ -65,7 +65,7 @@ display_failures() {
     exit 0
 }
 
-# --- Help Display Function (New Feature -h) ---
+# --- Help Display Function (for -h) ---
 display_help() {
     echo -e "\n${GREEN}=====================================================${NC}"
     echo -e "${YELLOW}Usage: ./your_script_name.sh [OPTION]${NC}"
@@ -94,6 +94,15 @@ case "$1" in
         ;;
 esac
 
+# --- ROOT CHECK (Ensures the script is run with necessary privileges on Debian/Ubuntu) ---
+if [[ $EUID -ne 0 ]]; then
+   echo -e "${RED}Error: Ei script-ti chalanor jonno root privilege (sudo) proyojon.${NC}"
+   echo -e "${RED}Please run this script as root or with sudo: sudo ./your_script_name.sh${NC}"
+   exit 1
+fi
+# --- End of ROOT CHECK ---
+
+
 # --- Initial Setup and Dependencies (Crucial for a clean install) ---
 echo -e "${BLUE}Starting initial setup and dependency installation...${NC}"
 
@@ -105,12 +114,12 @@ mkdir -p /root/OK-VPS/tools /root/OK-VPS/tools/file /root/wordlist /root/templat
 
 clear
 
-# Install core packages
-log_start "CORE" "Basic dependencies: git, curl, wget, unzip, make, pip"
-if apt update > /dev/null 2>&1 && apt install -y git curl wget unzip make build-essential python3-pip apt-transport-https jq nmap parallel > /dev/null 2>&1; then
+# Install core packages (Updated for wider Debian/Ubuntu compatibility: added libpcap-dev, ruby, ruby-dev, python3-dev)
+log_start "CORE" "Basic dependencies: git, curl, wget, build-essential, libpcap-dev, python3, ruby"
+if apt update > /dev/null 2>&1 && apt install -y git curl wget unzip make build-essential python3-pip apt-transport-https jq nmap parallel libpcap-dev ruby ruby-dev python3-dev > /dev/null 2>&1; then
     log_done "CORE" "Basic dependencies"
 else
-    log_fail "CORE" "Basic dependencies" "Apt install failed (Network/Repository issue)"
+    log_fail "CORE" "Basic dependencies" "Apt install failed (Network/Repository issue or missing core packages)"
 fi
 
 
@@ -433,7 +442,7 @@ DNS_RESOLVER () {
         ); then
             log_done "DNS RESOLVER" "MassDNS"
         else
-            log_fail "DNS RESOLVER" "MassDNS" "Make/Compilation failed (Need libpcap-dev?)"
+            log_fail "DNS RESOLVER" "MassDNS" "Make/Compilation failed (Need libpcap-dev? - now in CORE)"
         fi
     else
         log_skip "DNS RESOLVER" "MassDNS"
@@ -948,7 +957,7 @@ NETWORK_SCANNER () {
         ); then
             log_done "NETWORK SCANNER" "Masscan"
         else
-            log_fail "NETWORK SCANNER" "Masscan" "Make/Compilation failed (Need libpcap-dev?)"
+            log_fail "NETWORK SCANNER" "Masscan" "Make/Compilation failed (libpcap-dev is installed in CORE)"
         fi
     else
         log_skip "NETWORK SCANNER" "Masscan"
@@ -1457,14 +1466,14 @@ VULNS_SQLI () {
 
 CMS_SCANNER () {
     log_start "CMS SCANNER" "WPScan"
+    # ruby and ruby-dev now installed in CORE section
     if ! command -v wpscan &> /dev/null; then
         if (
-            apt install -y ruby ruby-dev > /dev/null 2>&1 &&
             gem install wpscan --no-document > /dev/null 2>&1
         ); then
             log_done "CMS SCANNER" "WPScan"
         else
-            log_fail "CMS SCANNER" "WPScan" "Gem install failed (Ruby dependency issue)"
+            log_fail "CMS SCANNER" "WPScan" "Gem install failed (Ruby dependency issue - check core install)"
         fi
     else
         log_skip "CMS SCANNER" "WPScan"
