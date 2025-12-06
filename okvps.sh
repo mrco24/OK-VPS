@@ -46,7 +46,7 @@ display_failures() {
     fi
 
     echo -e "\n${RED}========================================================================${NC}"
-    echo -e "${RED} FAILED TOOLS SUMMARY (Run './your_script_name.sh' to re-install) ${NC}"
+    echo -e "${RED} FAILED TOOLS SUMMARY (Run './okvps.sh' to re-install) ${NC}"
     echo -e "${RED}========================================================================${NC}"
     
     # Header
