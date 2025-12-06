@@ -28,6 +28,7 @@ apt-get update -y && apt-get install git -y && git clone https://github.com/mrco
 ```
 ./okvps.sh
 
+
 <img width="1280" height="855" alt="image" src="https://github.com/user-attachments/assets/1621c8ef-7cac-41bb-bd7d-b36f00e420a3" />
 
 ```
