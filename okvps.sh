@@ -1375,7 +1375,7 @@ VULNS_XSS () {
 
     log_start "VULNERABILITY - XSS" "Bxss"
     if ! command -v bxss &> /dev/null; then
-        if go install github.com/ethicalhackingplayground/bxss@latest > /dev/null 2>&1 && ln -s -f ~/go/bin/bxss /usr/local/bin/; then
+        if go install -v github.com/ethicalhackingplayground/bxss/v2/cmd/bxss@latest > /dev/null 2>&1 && ln -s -f ~/go/bin/bxss /usr/local/bin/; then
             log_done "VULNERABILITY - XSS" "Bxss"
         else
             log_fail "VULNERABILITY - XSS" "Bxss" "Go install failed (Compilation/Network error)"
