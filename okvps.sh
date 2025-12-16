@@ -751,12 +751,13 @@ WEB_CRAWLING () {
     log_start "WEB CRAWLING" "Uro"
     if ! command -v uro &> /dev/null; then
         if (
-            cd /root/OK-VPS/tools/file && 
-            wget -q https://github.com/s0md3v/uro/archive/refs/tags/1.0.0-beta.zip &&
-            unzip -q 1.0.0-beta.zip &&
-            cd uro-1.0.0-beta &&
-            python3 setup.py install > /dev/null 2>&1 &&
-            cp -f -r uro /usr/bin
+          sudo apt update
+          sudo apt install pipx -y
+          pipx ensurepath
+          source ~/.bashrc
+          # OR
+          source ~/.zshrc
+          pipx install uro
         ); then
             log_done "WEB CRAWLING" "Uro"
         else
