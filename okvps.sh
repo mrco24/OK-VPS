@@ -862,6 +862,7 @@ VULNS_SCANNER () {
             unzip -q jaeles-v0.17-linux.zip &&
             cp -f jaeles /usr/local/bin/ &&
             cd /root/templates &&
+            git clone https://github.com/projectdiscovery/fuzzing-templates.git > /dev/null 2>&1 &&
             git clone https://github.com/jaeles-project/jaeles-signatures.git > /dev/null 2>&1 &&
             git clone https://github.com/ghsec/ghsec-jaeles-signatures > /dev/null 2>&1
         ); then
